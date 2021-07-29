@@ -1,0 +1,8 @@
+@function size($size: 1) {
+    @return .5rem * $size;
+}
+
+
+@function size-flexible($size: 1) {
+    @return .5vw * $size;
+}

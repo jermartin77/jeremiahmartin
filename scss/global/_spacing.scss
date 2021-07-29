@@ -1,0 +1,9 @@
+.spacing {
+    padding-top: size(9);
+    padding-bottom: size(9);
+
+    @media screen and (min-width: $screen-md) {
+        padding-top: size(18);
+        padding-bottom: size(18);
+    }
+}

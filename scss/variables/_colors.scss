@@ -1,0 +1,28 @@
+$color-primary-base: #27C7E0;
+$color-gray-base: #1E1F1F;
+$color-white: #fff;
+$color-black: #000;
+
+$color-gray-1000: darken($color-gray-base, 10%);
+$color-gray-900: $color-gray-base;
+$color-gray-800: lighten($color-gray-base, 10%);
+$color-gray-700: lighten($color-gray-base, 20%);
+$color-gray-600: lighten($color-gray-base, 30%);
+$color-gray-500: lighten($color-gray-base, 40%);
+$color-gray-400: lighten($color-gray-base, 50%);
+$color-gray-300: lighten($color-gray-base, 60%);
+$color-gray-200: lighten($color-gray-base, 70%);
+$color-gray-100: lighten($color-gray-base, 80%);
+$color-gray-0: $color-white;
+
+
+$color-primary-100: lighten($color-primary-base, 20%);
+$color-primary-200: lighten($color-primary-base, 10%);
+$color-primary-300: $color-primary-base;
+$color-primary-400: darken($color-primary-base, 10%);
+$color-primary-500: darken($color-primary-base, 20%);
+
+
+
+
+$color-background: $color-gray-900;

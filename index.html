@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jeremiah Martin</title>
+  <link rel="stylesheet" href="styles/styles.css">
+
+</head>
+<body class="on-negative">
+<a href="#"  class="menu-link mobile" title="open menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</a>
+<nav id="section-navigation" class="section-navigation" aria-hidden="true">
+  <a href="#" class="menu-link desktop" title="open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+
+  <ul class="section-navigation-list">
+    <li>
+      <a class="section-navigation-link" href="#top">Top</a>
+    </li>
+    <li>
+      <a class="section-navigation-link" href="#slideshow">Gallery</a>
+    </li>
+    <li>
+      <a class="section-navigation-link" href="#intro">About</a>
+    </li>
+    <li>
+      <a class="section-navigation-link" href="#skills">Skills</a>
+    </li>
+    <li>
+      <a class="section-navigation-link" href="#portfolio">Portfolio</a>
+    </li>
+    <li>
+      <a class="section-navigation-link" href="#client-work">Client Work</a>
+    </li>
+    <li>
+      <a class="section-navigation-link" href="#connect">Connect</a>
+    </li>
+
+  </ul>
+</nav>
+<section id="top" class="hero-gallery">
+  <div id="hero-gallery-content" class="hero-gallery-content">
+    <h1><span>Jeremiah</span> <strong>James</strong> <span>Martin</span></h1>
+  </div>
+  <div id="slideshow" class="slideshow-spacer"></div>
+  <div class="slideshow-container">
+    <div id="slideshow-overlay" class="slideshow-overlay"></div>
+
+    <figure class="slideshow-item active">
+      <img src="images/dolomites.jpg"  class="slideshow-image">
+      <figcaption class="slideshow-caption">
+        <svg class="icon-camera">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+        <span>Gruppo Sassolungo, Dolomites - June 2019</span></figcaption>
+    </figure>
+
+    <figure class="slideshow-item">
+      <img src="images/gnp-sunset.jpg"  class="slideshow-image">
+      <figcaption class="slideshow-caption">
+        <svg class="icon-camera" aria-hidden="true">
+          <use xlink:href="#icon-camera"/>
+        </svg>
+        <span>Nightfall on Glacier National Park - January 2019</span></figcaption>
+    </figure>
+
+  </div>
+  <nav class="slideshow-nav" aria-hidden="true">
+    <ul class="slideshow-nav-list">
+      <li><a href="#slideshow" data-index="0" title="Gruppo Sassolungo, Dolomites - June 2019" class="slideshow-nav-link active"></a></li>
+      <li><a href="#slideshow" data-index="1"  title="Nightfall on Glacier National Park - January 2019" class="slideshow-nav-link"></a></li>
+      <!--<li><a href="#slideshow" data-index="2"  title="Gruppo Sassolungo, Dolomites - June 2019" class="slideshow-nav-link"></a></li>
+      <li><a href="#slideshow"  data-index="2"  title="Gruppo Sassolungo, Dolomites - June 2019" class="slideshow-nav-link"></a></li>-->
+    </ul>
+  </nav>
+</section>
+<div class="page on-negative">
+  <section id="intro" class="intro container--medium spacing">
+    <p class="intro-paragraph"><strong>Howdy</strong>. I'm a creative interface designer, front end developer and
+      creative
+      director. I work hard and play hard in a
+      small corner of Northwest Montana. </p>
+  </section>
+
+  <section id="skills" class="skills container--medium spacing">
+    <h2>Skills</h2>
+    <ul>
+      <li>Creative Direction</li>
+      <li>Web Strategy</li>
+      <li>Mentoring</li>
+      <li>Interface Design</li>
+      <li>Responsive Design</li>
+      <li>Responsive Development</li>
+      <li>Design Systems</li>
+      <li>User Exerience</li>
+      <li>HTML/CSS/JS</li>
+      <li>Vue.js</li>
+      <li>Web Accessibility</li>
+
+
+    </ul>
+  </section>
+
+  <section id="portfolio" class="portfolio container--medium spacing">
+    <h2>Design work</h2>
+    <ul>
+      <li>Yeti Cycles</li>
+      <li>Skullcandy</li>
+      <li>Mentoring</li>
+      <li>HTML/CSS/JS</li>
+      <li>Vue.js</li>
+      <li>Web Accessibility</li>
+      <li>User Exerience</li>
+
+    </ul>
+  </section>
+
+  <section id="client-work" class="client-work container--medium spacing">
+    <h2>Client Work</h2>
+    <ul>
+      <li>Yeti Cycles</li>
+      <li>Skullcandy</li>
+      <li>Orvis</li>
+      <li>evo.com</li>
+      <li>Oboz Footwear</li>
+      <li>Traeger Grills</li>
+      <li>Lands' End</li>
+      <li>Patagonia</li>
+
+    </ul>
+  </section>
+</div>
+<svg
+  aria-hidden="true"
+  focusable="false"
+  style="position: absolute; width: 0; height: 0; overflow: hidden;"
+>
+  <defs>
+    <symbol id="icon-camera"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></symbol>
+  </defs>
+</svg>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+        integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"
+        integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="scripts/app.js" async></script>
+</body>
+</html>

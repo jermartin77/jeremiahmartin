@@ -1,0 +1,24 @@
+.container {
+    &--full {
+
+    }
+    &--large {
+        padding-left: size-flexible(8);
+        padding-right: size-flexible(8);
+    }
+
+    &--medium {
+        padding-left: size-flexible(24);
+        padding-right: size-flexible(24);
+    }
+
+    // used for body copy
+    &--small {
+        max-width: 960px;
+        padding-left: size-flexible(8);
+        padding-right: size-flexible(8);
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+}

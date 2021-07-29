@@ -1,0 +1,79 @@
+body {
+    font-family: $font-family-base;
+}
+
+
+h1,
+.heading-1,
+h2,
+.heading-2,
+h3,
+.heading-3,
+h4,
+.heading-4 {
+    @include headings()
+}
+
+h1,
+.heading-1 {
+    font-size: size-flexible(24);
+    @media (min-width: $screen-md) {
+        font-size: size-flexible(8);
+    }
+
+}
+
+
+h2,
+.heading-2 {
+    font-size: size(6);
+}
+
+h3,
+.heading-3 {
+    font-size: size(4);
+}
+
+
+h4,
+.heading-4 {
+    font-size: size(3);
+}
+
+
+.tracked {
+    letter-spacing: $letter-spacing-tracked;
+}
+
+
+p {
+    font-size: size(2);
+    line-height: $line-height-base;
+
+    &.large {
+        font-size: size(3);
+    }
+
+    &.xlarge {
+        font-size: size(4);
+    }
+}
+
+ul {
+    line-height: $line-height-base;
+}
+
+
+strong {
+    color: $color-primary-base;
+    font-weight: inherit;
+}
+
+a {
+    color: $color-primary-base;
+    text-decoration: underline;
+
+    &:hover {
+        color: $color-primary-400;
+    }
+}

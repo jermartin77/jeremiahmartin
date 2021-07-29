@@ -1,0 +1,14 @@
+.intro {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.intro-paragraph {
+    font-size: size-flexible(12);
+    text-align: center;
+
+    @media (min-width: $screen-sm) {
+        font-size: size-flexible(6);
+    }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "jeremiahmartin",
+  "version": "1.0.0",
+  "description": "The personal website of Jeremiah Martin",
+  "main": "index.js",
+  "scripts": {
+    "compile-css": "node-sass --include-path scss scss/styles.scss   styles/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run compile-css\"",
+    "dev": "npm run watch-css & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jermartin77/jeremiahmartin.git"
+  },
+  "keywords": [
+    "personal",
+    "website",
+    "css",
+    "html",
+    "javascript"
+  ],
+  "author": "Jeremiah Martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jermartin77/jeremiahmartin/issues"
+  },
+  "homepage": "https://github.com/jermartin77/jeremiahmartin#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "gsap": "^3.7.1"
+  }
+}
