@@ -98,11 +98,6 @@
         display: block;
         background-color: rgba($color-white, 0);
         transition: all $transition-duration-base ease-out;
-
-        @media (min-width: $screen-md) {
-            width: size(2);
-            height: size(2);
-        }
     }
 
 
