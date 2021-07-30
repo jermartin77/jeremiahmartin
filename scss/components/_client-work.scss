@@ -1,0 +1,31 @@
+.client-work-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    gap: size($gutter);
+
+    li {
+        width: calc(50% - #{size($gutter/2)});
+        text-align: left;
+        padding-bottom: size(2);
+        margin-bottom: size(2);
+        position: relative;
+        font-weight: $font-weight-bold;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background-color: $color-primary-600;
+            width: size(3);
+            left: 0;
+        }
+
+        @media (min-width: $screen-md) {
+            width: calc(25% - #{size($gutter)});
+        }
+    }
+}

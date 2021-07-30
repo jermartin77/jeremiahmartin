@@ -10,7 +10,7 @@ $menu-width: size(6);
     background: rgba($color-gray-1000, .85);
     width: 100%;
     transform: translateX(-100%);
-    transition: transform $transition-duration-base $transition-ease-out-cubic;
+    transition: transform 0.5s $transition-ease-out-cubic;
 
     @media (min-width: $screen-sm) {
         width: 360px;

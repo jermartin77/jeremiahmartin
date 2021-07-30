@@ -28,7 +28,10 @@ h1,
 h2,
 .heading-2 {
     text-align: center;
-    font-size: size(6);
+    font-size: size-flexible(18);
+    @media (min-width: $screen-md) {
+        font-size: size-flexible(6);
+    }
 }
 
 h3,
@@ -52,12 +55,15 @@ p {
     font-size: size(2);
     line-height: $line-height-base;
 
-    &.large {
-        font-size: size(3);
+    @media (min-width: $screen-md) {
+        font-size: size(2.5);
     }
 
-    &.xlarge {
-        font-size: size(4);
+    &.large {
+        font-size: size(3);
+        @media (min-width: $screen-md) {
+            font-size: size(4);
+        }
     }
 }
 

@@ -1,0 +1,29 @@
+.contact-icons {
+    display: flex;
+    gap: size-flexible($gutter);
+    justify-content: center;
+    padding-top: size($gutter);
+
+    a {
+        color: $color-white;
+        display: flex;
+        padding: size(2);
+        justify-content: center;
+        transition: background-color $transition-duration-base ease-out;
+
+        &:hover {
+            background: $color-primary-500;
+        }
+
+
+
+    }
+}
+
+
+.contact-icon{
+    width: size(4);
+    height: size(4);
+    max-width: 100%;
+
+}
