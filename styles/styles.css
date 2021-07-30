@@ -93,20 +93,25 @@ img {
   z-index: 110;
   -webkit-backface-visibility: hidden; }
 
-.container--large {
-  padding-left: 7vw;
-  padding-right: 7vw; }
+.container--large, .container--medium, .container--small {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem; }
 
-.container--medium {
-  padding-left: 12vw;
-  padding-right: 12vw; }
+@media screen and (min-width: 900px) and (min-width: 900px) {
+  .container--large {
+    padding-left: 7vw;
+    padding-right: 7vw; } }
 
-.container--small {
-  max-width: 960px;
-  padding-left: 4vw;
-  padding-right: 4vw;
-  margin-left: auto;
-  margin-right: auto; }
+@media screen and (min-width: 900px) {
+  .container--medium {
+    padding-left: 12vw;
+    padding-right: 12vw; }
+  .container--small {
+    max-width: 960px;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    margin-left: auto;
+    margin-right: auto; } }
 
 .container--paragraph {
   max-width: 55ch;
@@ -461,7 +466,7 @@ img {
     background-color: rgba(55, 57, 57, 0.1); }
     .skills-list-item.size-1:hover {
       background-color: rgba(27, 164, 185, 0.25);
-      transform: translate(-1%, -2%) scale(1.05); }
+      transform: translate(-2%, 4%) scale(1.05); }
     @media (min-width: 900px) {
       .skills-list-item.size-1 {
         height: 10vw;
@@ -472,7 +477,7 @@ img {
     background-color: rgba(55, 57, 57, 0.15); }
     .skills-list-item.size-2:hover {
       background-color: rgba(27, 164, 185, 0.375);
-      transform: translate(3%, 1%) scale(1.05); }
+      transform: translate(0%, 3%) scale(1.05); }
     @media (min-width: 900px) {
       .skills-list-item.size-2 {
         height: 12vw;
@@ -483,7 +488,7 @@ img {
     background-color: rgba(55, 57, 57, 0.2); }
     .skills-list-item.size-3:hover {
       background-color: rgba(27, 164, 185, 0.5);
-      transform: translate(4%, 4%) scale(1.05); }
+      transform: translate(-5%, -4%) scale(1.05); }
     @media (min-width: 900px) {
       .skills-list-item.size-3 {
         height: 16vw;
@@ -494,7 +499,7 @@ img {
     background-color: rgba(55, 57, 57, 0.25); }
     .skills-list-item.size-4:hover {
       background-color: rgba(27, 164, 185, 0.625);
-      transform: translate(-2%, 4%) scale(1.05); }
+      transform: translate(-5%, 1%) scale(1.05); }
     @media (min-width: 900px) {
       .skills-list-item.size-4 {
         height: 18vw;
@@ -505,7 +510,7 @@ img {
     background-color: rgba(55, 57, 57, 0.3); }
     .skills-list-item.size-5:hover {
       background-color: rgba(27, 164, 185, 0.75);
-      transform: translate(3%, 3%) scale(1.05); }
+      transform: translate(4%, 2%) scale(1.05); }
     @media (min-width: 900px) {
       .skills-list-item.size-5 {
         height: 20vw;
@@ -516,7 +521,7 @@ img {
     background-color: rgba(55, 57, 57, 0.35); }
     .skills-list-item.size-6:hover {
       background-color: rgba(27, 164, 185, 0.875);
-      transform: translate(3%, -3%) scale(1.05); }
+      transform: translate(5%, 3%) scale(1.05); }
     @media (min-width: 900px) {
       .skills-list-item.size-6 {
         height: 22vw;
@@ -527,7 +532,7 @@ img {
     background-color: rgba(55, 57, 57, 0.4); }
     .skills-list-item.size-7:hover {
       background-color: #1ba4b9;
-      transform: translate(-3%, 5%) scale(1.05); }
+      transform: translate(3%, -3%) scale(1.05); }
     @media (min-width: 900px) {
       .skills-list-item.size-7 {
         height: 25vw;

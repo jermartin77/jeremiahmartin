@@ -2,24 +2,37 @@
     &--full {
 
     }
-    &--large {
-        padding-left: size-flexible(14);
-        padding-right: size-flexible(14);
-    }
 
-    &--medium {
-        padding-left: size-flexible(24);
-        padding-right: size-flexible(24);
-    }
-
-    // used for body copy
+    &--large,
+    &--medium,
     &--small {
-        max-width: 960px;
-        padding-left: size-flexible(8);
-        padding-right: size-flexible(8);
-        margin-left: auto;
-        margin-right: auto;
+        padding-left: size($gutter-mobile);
+        padding-right: size($gutter-mobile);
+    }
 
+    @media screen and (min-width: $screen-md) {
+        &--large {
+            @media screen and (min-width: $screen-md) {
+                padding-left: size-flexible(14);
+                padding-right: size-flexible(14);
+            }
+        }
+
+
+        &--medium {
+            padding-left: size-flexible(24);
+            padding-right: size-flexible(24);
+        }
+
+        // used for body copy
+        &--small {
+            max-width: 960px;
+            padding-left: size-flexible(8);
+            padding-right: size-flexible(8);
+            margin-left: auto;
+            margin-right: auto;
+
+        }
     }
 }
 
