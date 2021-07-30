@@ -33,6 +33,8 @@ $menu-width: size(6);
         left: 50%;
         transform: translate(-50%, 0);
         background: rgba($color-gray-1000, .2);
+        width: size(5);
+        height: size(5);
         @media (min-width: $screen-sm) {
             display: none;
         }
@@ -70,18 +72,18 @@ $menu-width: size(6);
         height: 2px;
         position: absolute;
         top: calc(50% - 1px);
-        left: size(1);
+        left: 20%;
         display: block;
-        width: size(4);
+        width: 60%;
         background-color: $color-white;
         transition: all $transition-duration-base $transition-ease-out-cubic;
 
         &:nth-child(1) {
-            transform: translate(0, -10px);
+            transform: translate(0, -8px);
         }
 
         &:nth-child(3) {
-            transform: translate(0, 10px);
+            transform: translate(0, 8px);
         }
     }
 

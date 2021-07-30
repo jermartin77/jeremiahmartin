@@ -1,9 +1,16 @@
 .spacing {
-    padding-top: size(9);
-    padding-bottom: size(9);
+    padding-top: size(8);
+    padding-bottom: size(8);
 
     @media screen and (min-width: $screen-md) {
-        padding-top: size(18);
-        padding-bottom: size(18);
+        padding-top: size(12);
+        padding-bottom: size(12);
+    }
+
+    .spacing + & {
+        padding-bottom: 0;
+        @media screen and (min-width: $screen-md) {
+            padding-bottom: 0;
+        }
     }
 }

@@ -185,6 +185,7 @@
             padding: size(2);
             left: size($gutter);
             font-size: size(1.75);
+            transition: opacity $transition-duration-base $transition-ease-out-cubic;
         }
     }
 }

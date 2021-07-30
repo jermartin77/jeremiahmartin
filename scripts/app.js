@@ -31,13 +31,14 @@ introTimeline.to('#slideshow-overlay', {
       event.preventDefault();
       if (menuActive) {
         $sectionNavigation.classList.remove('active')
-        event.target.classList.remove('active');
+        event.currentTarget.classList.remove('active');
       } else {
         $sectionNavigation.classList.add('active')
-        event.target.classList.add('active');
+        event.currentTarget.classList.add('active');
       }
 
       menuActive = !menuActive;
+      console.log('menuActive', menuActive)
 
     });
   });
@@ -70,7 +71,7 @@ introTimeline.to('#slideshow-overlay', {
 
   $iconCamera.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
-      event.target.classList.toggle('active')
+      event.currentTarget.classList.toggle('active')
     });
   });
 })();
