@@ -4,7 +4,7 @@
   "description": "The personal website of Jeremiah Martin",
   "main": "index.js",
   "scripts": {
-    "compile-css": "node-sass --include-path scss scss/styles.scss   styles/styles.css",
+    "compile-css": "node-sass --include-path scss scss/styles.scss   styles/styles.css --output-style compressed",
     "watch-css": "nodemon -e scss -x \"npm run compile-css\"",
     "dev": "npm run watch-css & live-server"
   },
