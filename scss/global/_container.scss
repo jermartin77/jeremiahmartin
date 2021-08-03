@@ -6,8 +6,8 @@
     &--large,
     &--medium,
     &--small {
-        padding-left: size($gutter-mobile);
-        padding-right: size($gutter-mobile);
+        padding-left: size($gutter);
+        padding-right: size($gutter);
     }
 
     @media screen and (min-width: $screen-md) {

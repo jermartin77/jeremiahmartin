@@ -24,13 +24,10 @@
 
   <ul class="section-navigation-list">
     <li>
-      <a class="section-navigation-link" href="#top">Top</a>
+      <a class="section-navigation-link" href="#intro">About</a>
     </li>
     <li>
       <a class="section-navigation-link" href="#slideshow">Gallery</a>
-    </li>
-    <li>
-      <a class="section-navigation-link" href="#intro">About</a>
     </li>
     <li>
       <a class="section-navigation-link" href="#skills">Skills</a>
@@ -47,59 +44,55 @@
 
   </ul>
 </nav>
-<section id="top" class="hero-gallery">
-  <div id="hero-gallery-content" class="hero-gallery-content">
+
+
+<section id="intro" class="intro">
     <h1><span>Jeremiah</span> <strong>James</strong> <span>Martin</span></h1>
-  </div>
-  <div id="slideshow" class="slideshow-spacer"></div>
-  <div class="slideshow-container">
-    <div id="slideshow-overlay" class="slideshow-overlay"></div>
-
-    <figure class="slideshow-item active">
-      <img src="images/dolomites.jpg" class="slideshow-image" alt="Dolomites">
-      <figcaption class="slideshow-caption">
-        <svg class="icon-camera">
-          <use xlink:href="#icon-camera"/>
-        </svg>
-        <span>Gruppo Sassolungo, Dolomites - June 2019</span></figcaption>
-    </figure>
-
-    <figure class="slideshow-item">
-      <img src="images/gnp-sunset.jpg" class="slideshow-image" alt="Glacier National Park in winter">
-      <figcaption class="slideshow-caption">
-        <svg class="icon-camera" aria-hidden="true">
-          <use xlink:href="#icon-camera"/>
-        </svg>
-        <span>Nightfall on Glacier National Park - January 2019</span></figcaption>
-    </figure>
-    <figure class="slideshow-item">
-      <img src="images/norris.jpg" class="slideshow-image" alt="Norris Traverse">
-      <figcaption class="slideshow-caption">
-        <svg class="icon-camera" aria-hidden="true">
-          <use xlink:href="#icon-camera"/>
-        </svg>
-        <span>Red Eagle Valley in Glacier National Park - August 2016</span></figcaption>
-    </figure>
+    <div class="container--small">
+    <p id="intro-paragraph" class="intro-paragraph"><strong>Howdy</strong>.
+      I'm a creative director, interface designer, and front end developer. I work hard and play hard in a small corner of Northwest Montana. This site is a work in progress.</p>
 
   </div>
-  <nav class="slideshow-nav" aria-hidden="true">
-    <ul class="slideshow-nav-list">
-      <li><a href="#slideshow" data-index="0" title="Gruppo Sassolungo, Dolomites - June 2019"
-             class="slideshow-nav-link active"></a></li>
-      <li><a href="#slideshow" data-index="1" title="Nightfall on Glacier National Park - January 2019"
-             class="slideshow-nav-link"></a></li>
-      <li><a href="#slideshow" data-index="2" title="Red Eagle Valley in Glacier National Park - August 2016"
-             class="slideshow-nav-link"></a></li>
-
-    </ul>
-  </nav>
 </section>
+<div class="slideshow-container">
+  <div id="slideshow-overlay" class="slideshow-overlay"></div>
+  <figure class="slideshow-item active">
+    <img src="images/dolomites.jpg" class="slideshow-image" alt="Dolomites">
+    <figcaption class="slideshow-caption">
+      <svg class="icon-camera">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Gruppo Sassolungo, Dolomites - June 2019</span></figcaption>
+  </figure>
+  <figure class="slideshow-item">
+    <img src="images/gnp-sunset.jpg" class="slideshow-image" alt="Glacier National Park in winter">
+    <figcaption class="slideshow-caption">
+      <svg class="icon-camera" aria-hidden="true">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Nightfall on Glacier National Park - January 2019</span></figcaption>
+  </figure>
+  <figure class="slideshow-item">
+    <img src="images/norris.jpg" class="slideshow-image" alt="Norris Traverse">
+    <figcaption class="slideshow-caption">
+      <svg class="icon-camera" aria-hidden="true">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Red Eagle Valley in Glacier National Park - August 2016</span></figcaption>
+  </figure>
+</div>
+<nav class="slideshow-nav" aria-hidden="true">
+  <ul class="slideshow-nav-list">
+    <li><a href="#slideshow" data-index="0" title="Gruppo Sassolungo, Dolomites - June 2019"
+           class="slideshow-nav-link active"></a></li>
+    <li><a href="#slideshow" data-index="1" title="Nightfall on Glacier National Park - January 2019"
+           class="slideshow-nav-link"></a></li>
+    <li><a href="#slideshow" data-index="2" title="Red Eagle Valley in Glacier National Park - August 2016"
+           class="slideshow-nav-link"></a></li>
+  </ul>
+</nav>
+<div id="slideshow" class="slideshow-spacer"></div>
 <div class="page on-negative">
-  <section id="intro" class="intro container--medium spacing">
-    <p class="intro-paragraph"><strong>Howdy</strong>. I'm a creative
-      director, interface designer, and front end developer. I work hard and play hard in a small corner of Northwest Montana. This site is a work in progress. </p>
-  </section>
-
   <section id="skills" class="skills container--large spacing">
     <h2>Skills</h2>
     <ul class="skills-list">
@@ -137,15 +130,16 @@
       <li>Oboz Footwear</li>
       <li>Traeger Grills</li>
       <li>Lands' End</li>
+      <li>Osprey Packs</li>
       <li>Jackson Hole Mountain Resort</li>
-      <li>Nixon Watches &amp; Accessories</li>
       <li>Filson</li>
+      <li>Nixon Watches &amp; Accessories</li>
       <li>Patagonia</li>
 
     </ul>
   </section>
-  <section id="contact" class="contact container--medium spacing">
-    <h2>Contact</h2>
+  <section id="connect" class="contact container--medium spacing">
+    <h2>Connect</h2>
     <p>Feel free to reach out or learn more.</p>
     <div class="contact-icons">
       <a href="mailto:jeremiahjmartin@gmail.com"><span class="sr-only">Email me</span>
@@ -211,7 +205,6 @@
     </symbol>
   </defs>
 </svg>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
         integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg=="

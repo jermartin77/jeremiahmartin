@@ -1,15 +1,46 @@
 .intro {
-    height: 100vh;
-    max-height: 780px;
     display: flex;
     align-items: center;
+    text-align: center;
+    position: relative;
+    flex-direction: column;
+    z-index: $z-index-base;
+    width: 100%;
+    padding-top: calc(50vh - #{(size-flexible(24) * 3.6) / 2});
+    padding-bottom: size-flexible(20);
+    // background: rgba($color-primary, .3);
+
+    @media (min-width: $screen-md) {
+        padding-top: calc(50vh - #{(size-flexible(8) * 1.2) / 2});
+        padding-bottom: size-flexible(10);
+    }
+
+    h1 {
+        margin: 0 0 size-flexible(100) 0;
+        @media (min-width: $screen-md) {
+            margin: 0 0 size-flexible(30) 0;
+        }
+
+        span,
+        strong {
+            display: block;
+
+            @media screen and (min-width: $screen-md) {
+                display: inline;
+            }
+        }
+    }
+
+
 }
 
 .intro-paragraph {
-    font-size: size-flexible(12);
+    opacity: 0;
+    font-size: size-flexible(10);
     text-align: center;
+    margin: 0;
 
     @media (min-width: $screen-sm) {
-        font-size: size-flexible(6);
+        font-size: size-flexible(5);
     }
 }

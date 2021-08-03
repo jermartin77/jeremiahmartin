@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 var introTimeline = new gsap.timeline({
     scrollTrigger: {
-      trigger: "#hero-gallery-content",
+      trigger: "#intro",
       start: "top top",
       end: "bottom top",
       scrub: 0.5,
@@ -13,9 +13,15 @@ var introTimeline = new gsap.timeline({
   }
 );
 
-introTimeline.to('#slideshow-overlay', {
-  opacity: 0
-});
+introTimeline.addLabel('start').to('#slideshow-overlay', {
+  opacity: 0,
+  duration: 1.5,
+  delay: .5
+}, 'start').to('#intro-paragraph', {
+  opacity: 1,
+  duration: 1,
+}, 'start');
+
 
 (function () {
 
@@ -38,8 +44,6 @@ introTimeline.to('#slideshow-overlay', {
       }
 
       menuActive = !menuActive;
-      console.log('menuActive', menuActive)
-
     });
   });
 

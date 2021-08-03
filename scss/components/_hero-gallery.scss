@@ -1,39 +1,15 @@
-.hero-gallery {
-    text-align: center;
-}
-
-.hero-gallery-content {
-    position: relative;
-    z-index: $z-index-base;
-    width: 100%;
-    padding-top: calc(50vh - #{(size-flexible(24) * 3.6) / 2});
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    @media (min-width: $screen-md) {
-        padding-top: calc(50vh - #{(size-flexible(8) * 1.2) / 2});
-    }
-
-    h1 {
-        margin: 0;
-    }
-
-    span,
-    strong {
-        display: block;
-
-        @media screen and (min-width: $screen-md) {
-            display: inline;
-        }
-    }
-
-}
 
 .slideshow-spacer {
     height: 100vh;
+    background: rgba($color-primary, .3);
 }
+
+
+.hero-gallery {
+
+}
+
+
 
 .slideshow-container {
     position: fixed;
