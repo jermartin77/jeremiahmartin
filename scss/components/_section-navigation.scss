@@ -12,7 +12,7 @@ $menu-width: size(6);
     transform: translateX(-100%);
     transition: transform 0.5s $transition-ease-out-cubic;
 
-    @media (min-width: $screen-sm) {
+    @media (min-width: $screen-md) {
         width: 360px;
     }
 
@@ -26,16 +26,16 @@ $menu-width: size(6);
     width: $menu-width;
     height: $menu-width;
     transition: all $transition-duration-base $transition-ease-out-cubic;
+    background: rgba($color-gray-1000, .3);
 
     &.mobile {
         position: fixed;
         top: size(2);
         left: 50%;
         transform: translate(-50%, 0);
-        background: rgba($color-gray-1000, .2);
         width: size(5);
         height: size(5);
-        @media (min-width: $screen-sm) {
+        @media (min-width: $screen-md) {
             display: none;
         }
 
@@ -46,7 +46,7 @@ $menu-width: size(6);
 
     &.desktop {
         display: none;
-        @media (min-width: $screen-sm) {
+        @media (min-width: $screen-md) {
             display: block;
             position: absolute;
             left: calc(100% + #{size($gutter)});
@@ -126,19 +126,5 @@ $menu-width: size(6);
     color: $color-white;
     display: flex;
     align-items: center;
-    // padding: size(1);
 }
-
-//.section-navigation-label {
-//    display: inline-block;
-//    line-height: 1em;
-//    width: 10ch;
-//    opacity: 0;
-//    transition: all $transition-duration-long $transition-ease-out-cubic;
-//
-//    .section-navigation:hover & {
-//        margin-left: 0;
-//        opacity: 1;
-//    }
-//}
 

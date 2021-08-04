@@ -1,7 +1,6 @@
 
 .slideshow-spacer {
     height: 100vh;
-    background: rgba($color-primary, .3);
 }
 
 
@@ -27,7 +26,7 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba($color-gray-1000, .6);
+    background: rgba($color-gray-1000, .7);
     z-index: $z-index-below-page + 1;
     backdrop-filter: grayscale(.7)
 }

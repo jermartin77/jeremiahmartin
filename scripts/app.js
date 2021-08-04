@@ -2,10 +2,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Fade in effect for gallery
 
-var introTimeline = new gsap.timeline({
+const introTimeline = new gsap.timeline({
     scrollTrigger: {
       trigger: "#intro",
-      start: "top top",
+      start: "40% top",
       end: "bottom top",
       scrub: 0.5,
       // markers: true
@@ -13,55 +13,73 @@ var introTimeline = new gsap.timeline({
   }
 );
 
-introTimeline.addLabel('start').to('#slideshow-overlay', {
+introTimeline.to('#slideshow-overlay', {
   opacity: 0,
-  duration: 1.5,
-  delay: .5
-}, 'start').to('#intro-paragraph', {
-  opacity: 1,
-  duration: 1,
-}, 'start');
+});
 
 
 (function () {
 
   // navigation
-  var $menuLinks = document.querySelectorAll('.menu-link');
-  var $sectionNavigation = document.getElementById('section-navigation');
-  var $sectionNavigationLinks = document.querySelectorAll('.section-navigation-link');
-  var menuActive = false;
+  const $menuLinks = document.querySelectorAll('.menu-link');
+  const $sectionNavigation = document.getElementById('section-navigation');
+  const $body = document.getElementById('body');
+  const $sectionNavigationLinks = document.querySelectorAll('.section-navigation-link');
+  let   menuActive = false;
+
+  // close the menu when the body is clicked.
+  $sectionNavigation.addEventListener('click', function(e) {
+    e.stopPropagation();
+  })
+
+  $body.addEventListener('keydown', function(e) {
+    if (e.key == 'Escape') {
+      closeMenu();
+    }
+    })
+
+  function openMenu() {
+    $sectionNavigation.classList.add('active');
+    $body.addEventListener('click', closeMenu);
+
+
+
+
+    menuActive = true;
+  }
+
+  function closeMenu() {
+    $sectionNavigation.classList.remove('active');
+    $body.removeEventListener('click', closeMenu);
+    $menuLinks[0].classList.remove('active');
+    $menuLinks[1].classList.remove('active');
+    menuActive = false;
+  }
 
 
   $menuLinks.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
       event.preventDefault();
       if (menuActive) {
-        $sectionNavigation.classList.remove('active')
-        event.currentTarget.classList.remove('active');
+        closeMenu();
       } else {
-        $sectionNavigation.classList.add('active')
         event.currentTarget.classList.add('active');
+        openMenu();
       }
-
-      menuActive = !menuActive;
     });
   });
 
   $sectionNavigationLinks.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
-      $sectionNavigation.classList.remove('active');
-      $menuLinks[0].classList.remove('active');
-      $menuLinks[1].classList.remove('active')
-      menuActive = false;
+      closeMenu();
     });
   });
 
-
   // hero gallery functionality
-  var $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
-  var $slideshowItems = document.querySelectorAll('.slideshow-item');
-  var $iconCamera = document.querySelectorAll('.icon-camera');
-  var activeIdx = 0;
+  const $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
+  const $slideshowItems = document.querySelectorAll('.slideshow-item');
+  const $iconCamera = document.querySelectorAll('.icon-camera');
+  let   activeIdx = 0;
 
   $slideshowNav.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
@@ -78,6 +96,23 @@ introTimeline.addLabel('start').to('#slideshow-overlay', {
       event.currentTarget.classList.toggle('active')
     });
   });
+
+  // intersection observer for video
+  const $portfolioVideo = document.getElementById('portfolio-video');
+
+  function handleIntersection(entries) {
+    entries.map((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        entry.target.pause();
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(handleIntersection);
+  observer.observe($portfolioVideo);
+
 })();
 
 

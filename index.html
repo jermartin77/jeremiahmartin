@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles/styles.css">
 
 </head>
-<body class="on-negative">
+<body id="body" class="on-negative">
 <a href="#" class="menu-link mobile" title="open menu">
   <span></span>
   <span></span>
@@ -47,12 +47,13 @@
 
 
 <section id="intro" class="intro">
-    <h1><span>Jeremiah</span> <strong>James</strong> <span>Martin</span></h1>
-    <div class="container--small">
-    <p id="intro-paragraph" class="intro-paragraph"><strong>Howdy</strong>.
-      I'm a creative director, interface designer, and front end developer. I work hard and play hard in a small corner of Northwest Montana. This site is a work in progress.</p>
+  <h1><span>Jeremiah</span> <strong>James</strong> <span>Martin</span></h1>
 
-  </div>
+    <p id="intro-paragraph" class="container--small intro-paragraph"><strong>Howdy</strong>.
+      I'm a creative director, interface designer, and front end developer. I work hard and play hard in a small corner
+      of Northwest Montana. This site is a work in progress.</p>
+
+
 </section>
 <div class="slideshow-container">
   <div id="slideshow-overlay" class="slideshow-overlay"></div>
@@ -65,7 +66,7 @@
       <span>Gruppo Sassolungo, Dolomites - June 2019</span></figcaption>
   </figure>
   <figure class="slideshow-item">
-    <img src="images/gnp-sunset.jpg" class="slideshow-image" alt="Glacier National Park in winter">
+    <img data-src="images/gnp-sunset.jpg" class="slideshow-image lazyload" alt="Glacier National Park in winter">
     <figcaption class="slideshow-caption">
       <svg class="icon-camera" aria-hidden="true">
         <use xlink:href="#icon-camera"/>
@@ -73,7 +74,7 @@
       <span>Nightfall on Glacier National Park - January 2019</span></figcaption>
   </figure>
   <figure class="slideshow-item">
-    <img src="images/norris.jpg" class="slideshow-image" alt="Norris Traverse">
+    <img data-src="images/norris.jpg" class="slideshow-image lazyload" alt="Norris Traverse">
     <figcaption class="slideshow-caption">
       <svg class="icon-camera" aria-hidden="true">
         <use xlink:href="#icon-camera"/>
@@ -96,32 +97,79 @@
   <section id="skills" class="skills container--large spacing">
     <h2>Skills</h2>
     <ul class="skills-list">
-      <li class="skills-list-item size-1" data-number="1"><span>Vue.js</span></li>
-      <li class="skills-list-item size-2" data-number="2"><span>Web Accessibility</span></li>
-      <li class="skills-list-item size-2" data-number="3"><span>User Exerience</span></li>
-      <li class="skills-list-item size-3" data-number="4"><span>Mentoring</span></li>
-      <li class="skills-list-item size-3" data-number="5"><span>Web Performance</span></li>
-      <li class="skills-list-item size-4" data-number="6"><span>Web Strategy</span></li>
-      <li class="skills-list-item size-4" data-number="7"><span>Interface Design</span></li>
-      <li class="skills-list-item size-5" data-number="8"><span>Responsive Design</span></li>
-      <li class="skills-list-item size-7" data-number="9"><span>HTML/CSS/JS</span></li>
-      <li class="skills-list-item size-6" data-number="10"><span>Responsive Development</span></li>
-      <li class="skills-list-item size-6" data-number="11"><span>Design Systems</span></li>
-      <li class="skills-list-item size-7" data-number="12"><span>Creative Direction</span></li>
+      <li class="skills-list-item size-1" id="skill-1" data-number="1"><span>Vue.js</span></li>
+      <li class="skills-list-item size-2" id="skill-2" data-number="2"><span>Web Accessibility</span></li>
+      <li class="skills-list-item size-2" id="skill-3" data-number="3"><span>User Exerience</span></li>
+      <li class="skills-list-item size-3" id="skill-4" data-number="4"><span>Mentoring</span></li>
+      <li class="skills-list-item size-3" id="skill-5" data-number="5"><span>Web Performance</span></li>
+      <li class="skills-list-item size-4" id="skill-6" data-number="6"><span>Web Strategy</span></li>
+      <li class="skills-list-item size-4" id="skill-7" data-number="7"><span>Interface Design</span></li>
+      <li class="skills-list-item size-5" id="skill-8" data-number="8"><span>Responsive Design</span></li>
+      <li class="skills-list-item size-7" id="skill-9" id="skill-1" data-number="9"><span>HTML/CSS/JS</span></li>
+      <li class="skills-list-item size-6" id="skill-10" data-number="10"><span>Responsive Development</span></li>
+      <li class="skills-list-item size-6" id="skill-11" data-number="11"><span>Design Systems</span></li>
+      <li class="skills-list-item size-7" id="skill-12" data-number="12"><span>Creative Direction</span></li>
 
 
     </ul>
   </section>
 
-  <section id="portfolio" class="portfolio container--medium spacing">
+  <section id="portfolio" class="portfolio container--large spacing divider">
     <h2>Portfolio</h2>
-    <p style="text-align: center">Coming soon!</p>
+    <div class="spacing--bottom">
+      <div class="portfolio-grid">
+        <video id="portfolio-video" playsinline muted loop class="portfolio-image lazyload" width="1600" height="860"
+               title="Video of a Yeti Cycles Bike Detail Page">
+          <source class="lazyload" src="/video/yeti-cycles.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-grid size-3up">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="images/yeti-jared.jpg" class="portfolio-image lazyload" width="390" height="820"
+             alt="Yeti Cycles: Jared Graves Page">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="images/yeti-nate.jpg" class="portfolio-image lazyload" width="390" height="820"
+             alt="Yeti Cycles: Nate Hills Page">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="images/yeti-reed.jpg" class="portfolio-image lazyload" width="390" height="820"
+             alt="Yeti Cycles: Stories Landing page">
+      </div>
+      <div class="portfolio-caption underline">
+        <h3 class="porfolio-caption-heading">Yeti Cycles:</h3> Creative Direction, Interface Design, Front End
+        Development
+      </div>
+    </div>
+    <div>
+      <div class="portfolio-grid size-2up">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="images/oboz-pdp-desktop-1.jpg" class="portfolio-image lazyload" width="1440" height="2500"
+             alt="Oboz product page 2">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="images/oboz-pdp-desktop-2.jpg" class="portfolio-image lazyload" width="390" height="820"
+             alt="Oboz product page 1">
+      </div>
+      <div class="portfolio-grid size-1-2up">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="images/oboz-home-desktop.jpg" class="portfolio-image lazyload" width="1440" height="1406"
+             alt="Oboz product page 2">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+             data-src="images/oboz-home-mobile.jpg" class="portfolio-image lazyload" width="780" height="1640"
+             alt="Oboz product page 1">
+      </div>
+      <div class="portfolio-caption underline">
+        <h3 class="porfolio-caption-heading">Oboz Footwear:</h3> Creative Direction, Interface Design, Front End
+        Development
+      </div>
+    </div>
 
   </section>
 
-  <section id="client-work" class="client-work container--medium spacing">
+  <section id="client-work" class="client-work divider container--medium spacing">
     <h2>Client Work</h2>
-    <p class="container--paragraph">I've been lucky to work with amazing clients in the past and present. Most of this work would not be possible without the larger team at the <a href="https://www.zaneray.com" target="_blank">ZaneRay</a> Group.</p>
+    <p class="container--paragraph">I've been lucky to work with amazing clients in the past and present. Most of this
+      work would not be possible without the larger team at the <a href="https://www.zaneray.com" target="_blank">ZaneRay</a>
+      Group.</p>
     <ul class="client-work-list">
       <li>Yeti Cycles</li>
       <li>Skullcandy</li>
@@ -138,7 +186,7 @@
 
     </ul>
   </section>
-  <section id="connect" class="contact container--medium spacing">
+  <section id="connect" class="contact divider container--medium spacing">
     <h2>Connect</h2>
     <p>Feel free to reach out or learn more.</p>
     <div class="contact-icons">
@@ -212,12 +260,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"
         integrity="sha512-DlTk2PLUinhBupE89kHOJTt11QqbRMQVlbb26XVDvp4D1kt0fRvQJslvZnTelRJHq6yK0tIPCR7cul8+9Blz0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"
+        integrity="sha512-q583ppKrCRc7N5O0n2nzUiJ+suUv7Et1JGels4bXOaMFQcamPk9HjdUknZuuFjBNs7tsMuadge5k9RzdmO+1GQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="scripts/app.js" async></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38434943-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
   gtag('js', new Date());
 
   gtag('config', 'UA-38434943-1');

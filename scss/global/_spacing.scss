@@ -1,14 +1,20 @@
 .spacing {
-    padding-top: size(8);
-    padding-bottom: size(8);
     position: relative;
+    @include spacing();
 
-    @media screen and (min-width: $screen-md) {
-        padding-top: size(14);
-        padding-bottom: size(14);
+
+    &--top {
+        @include spacing(top);
     }
 
-    .spacing + & {
+
+    &--bottom {
+        @include spacing(bottom);
+    }
+
+
+
+    &.divider {
         &::before {
             content: '';
             height: 2px;
@@ -20,9 +26,5 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        //padding-top: 0;
-        //@media screen and (min-width: $screen-md) {
-        //    padding-top: 0;
-        //}
     }
 }

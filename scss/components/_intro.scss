@@ -1,3 +1,10 @@
+@mixin halfHeight() {
+    padding-top: calc(50vh - #{(size-flexible(24) * 3.6) / 2});
+    @media (min-width: $screen-md) {
+        padding-top: calc(50vh - #{(size-flexible(9) * 1.2) / 2});
+    }
+}
+
 .intro {
     display: flex;
     align-items: center;
@@ -6,20 +13,14 @@
     flex-direction: column;
     z-index: $z-index-base;
     width: 100%;
-    padding-top: calc(50vh - #{(size-flexible(24) * 3.6) / 2});
-    padding-bottom: size-flexible(20);
-    // background: rgba($color-primary, .3);
 
-    @media (min-width: $screen-md) {
-        padding-top: calc(50vh - #{(size-flexible(8) * 1.2) / 2});
-        padding-bottom: size-flexible(10);
-    }
+    @include halfHeight;
+
+
+
 
     h1 {
-        margin: 0 0 size-flexible(100) 0;
-        @media (min-width: $screen-md) {
-            margin: 0 0 size-flexible(30) 0;
-        }
+        margin: 0 ;
 
         span,
         strong {
@@ -35,12 +36,12 @@
 }
 
 .intro-paragraph {
-    opacity: 0;
     font-size: size-flexible(10);
     text-align: center;
-    margin: 0;
+    margin: 0 0  size-flexible(8) 0;
+    @include halfHeight;
 
-    @media (min-width: $screen-sm) {
+    @media (min-width: $screen-md) {
         font-size: size-flexible(5);
     }
 }

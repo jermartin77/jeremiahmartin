@@ -1,0 +1,123 @@
+.portfolio-grid {
+    display: flex;
+    gap: size($gutter);
+    margin-top: size($gutter);
+    margin-bottom: size($gutter);
+
+    @media (min-width: $screen-md) {
+        display: grid;
+        gap: size-flexible(8);
+        margin-top: size-flexible(8);
+        margin-bottom: size-flexible(8);
+
+    }
+
+
+    &.size-2up,
+    &.size-3up,
+    &.size-1-2up{
+        display: flex;
+        overflow-x: auto;
+        margin-left: size($gutter * -1);
+        margin-right: size($gutter * -1);
+        padding-bottom: size($gutter);
+        @media (min-width: $screen-md) {
+            display: grid;
+            overflow-x: inherit;
+            margin-left: 0;
+            margin-right: 0;
+            padding-bottom: 0;
+        }
+
+        .portfolio-image {
+            @media (max-width: $screen-md - 1) {
+                &:first-child {
+                    margin-left: size($gutter);
+                }
+                &:last-child {
+                    margin-right: size($gutter);
+                }
+            }
+        }
+    }
+
+    &.size-2up {
+        .portfolio-image {
+            @media (max-width: $screen-md - 1) {
+
+                width: 240px;
+            }
+        }
+
+        @media (min-width: $screen-md) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &.size-3up {
+        .portfolio-image {
+            @media (max-width: $screen-md - 1) {
+                width: 240px;
+
+            }
+        }
+
+        @media (min-width: $screen-md) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    &.size-1-2up {
+        .portfolio-image {
+            object-fit: cover;
+            @media (max-width: $screen-md - 1) {
+                width: 240px;
+
+                &:nth-child(1) {
+                    width: 500px;
+                }
+            }
+
+            @media (min-width: $screen-md) {
+                height: 100%;
+
+            }
+        }
+
+        @media (min-width: $screen-md) {
+            grid-template-columns: 2fr 1fr;
+        }
+    }
+}
+
+.portfolio-image {
+    border-radius: size-flexible(1.5);
+    box-shadow: 0 0 size-flexible(8) rgba(0, 0, 0, .7);
+    transition: opacity .3s ease-in;
+
+    .lazyload {
+        opacity: 0;
+
+    }
+
+    .lazyloaded {
+        opacity: 1;
+    }
+}
+
+.portfolio-caption {
+    text-align: left;
+}
+
+.porfolio-caption-heading {
+    font-size: inherit;
+    text-transform: none;
+    font-weight: $font-weight-bold;
+    display: inline;
+    letter-spacing: 0;
+}
+
+
+.visible {
+    border: 2px solid salmon;
+}
