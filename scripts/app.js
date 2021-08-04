@@ -25,24 +25,24 @@ introTimeline.to('#slideshow-overlay', {
   const $sectionNavigation = document.getElementById('section-navigation');
   const $body = document.getElementById('body');
   const $sectionNavigationLinks = document.querySelectorAll('.section-navigation-link');
-  let   menuActive = false;
+  let menuActive = false;
 
   // close the menu when the body is clicked.
-  $sectionNavigation.addEventListener('click', function(e) {
+  $sectionNavigation.addEventListener('click', function (e) {
     e.stopPropagation();
   })
 
-  $body.addEventListener('keydown', function(e) {
+  $body.addEventListener('keydown', function (e) {
     if (e.key == 'Escape') {
       closeMenu();
     }
-    })
+  })
 
   function openMenu() {
     $sectionNavigation.classList.add('active');
-    $body.addEventListener('click', closeMenu);
-
-
+    setTimeout(function () {
+      $body.addEventListener('click', closeMenu);
+    }, 300);
 
 
     menuActive = true;
@@ -60,6 +60,7 @@ introTimeline.to('#slideshow-overlay', {
   $menuLinks.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
       event.preventDefault();
+      console.log('menuActive', menuActive)
       if (menuActive) {
         closeMenu();
       } else {
@@ -79,7 +80,7 @@ introTimeline.to('#slideshow-overlay', {
   const $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
   const $slideshowItems = document.querySelectorAll('.slideshow-item');
   const $iconCamera = document.querySelectorAll('.icon-camera');
-  let   activeIdx = 0;
+  let activeIdx = 0;
 
   $slideshowNav.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
