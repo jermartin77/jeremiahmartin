@@ -1,5 +1,6 @@
 body {
     font-family: $font-family-base;
+    line-height: 1.5;
 }
 
 
@@ -27,10 +28,18 @@ h1,
 
 h2,
 .heading-2 {
-    text-align: center;
-    font-size: size-flexible(18);
+    font-size: size-flexible(20);
     @media (min-width: $screen-md) {
-        font-size: size-flexible(8);
+        font-size: size-flexible(10);
+    }
+
+    &.underline {
+        padding-bottom: .5em;
+        margin-bottom: 1em;
+
+        &:after {
+            width: 2ch;
+        }
     }
 }
 

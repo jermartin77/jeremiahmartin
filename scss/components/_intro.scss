@@ -1,7 +1,9 @@
 @mixin halfHeight() {
-    padding-top: calc(50vh - #{(size-flexible(24) * 3.6) / 2});
+    padding-top: calc(50vh - #{(size-flexible(24) * 3.3) / 2});
+    padding-bottom: calc(50vh - #{(size-flexible(24) * 3.3) / 2});
     @media (min-width: $screen-md) {
-        padding-top: calc(50vh - #{(size-flexible(9) * 1.2) / 2});
+        padding-top: calc(50vh - #{(size-flexible(9) * 1.1) / 2});
+        padding-bottom: calc(50vh - #{(size-flexible(9) * 1.1) / 2});
     }
 }
 
@@ -14,14 +16,12 @@
     z-index: $z-index-base;
     width: 100%;
 
-    @include halfHeight;
-
 
 
 
     h1 {
+        @include halfHeight;
         margin: 0 ;
-
         span,
         strong {
             display: block;
@@ -38,8 +38,9 @@
 .intro-paragraph {
     font-size: size-flexible(10);
     text-align: center;
-    margin: 0 0  size-flexible(8) 0;
-    @include halfHeight;
+    padding-top: size-flexible(6);
+    margin: 0;
+
 
     @media (min-width: $screen-md) {
         font-size: size-flexible(5);

@@ -26,9 +26,9 @@
     height: 100%;
     left: 0;
     top: 0;
-    background: rgba($color-gray-1000, .7);
+    background: rgba($color-gray-1000, .5);
     z-index: $z-index-below-page + 1;
-    backdrop-filter: grayscale(.7)
+    backdrop-filter: grayscale(.8);
 }
 
 .slideshow-nav {

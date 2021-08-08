@@ -14,7 +14,8 @@
 
 
 
-    &.divider {
+    &.divider,
+    &.divider--bottom {
         &::before {
             content: '';
             height: 2px;
@@ -22,9 +23,20 @@
             max-width: 100px;
             background-color: $color-primary;
             position: absolute;
-            top: 0;
             left: 50%;
             transform: translateX(-50%);
+        }
+    }
+
+    &.divider {
+        &::before {
+            top: 0;
+        }
+    }
+
+    &.divider--bottom {
+        &::before {
+            bottom: 0;
         }
     }
 }

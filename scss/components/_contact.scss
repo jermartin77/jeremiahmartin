@@ -1,8 +1,7 @@
 .contact-icons {
     display: flex;
     gap: size-flexible($gutter);
-    justify-content: center;
-    padding-top: size($gutter);
+    justify-content: flex-start;
 
     a {
         color: $color-white;

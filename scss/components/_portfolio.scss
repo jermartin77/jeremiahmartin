@@ -113,8 +113,11 @@
     font-size: inherit;
     text-transform: none;
     font-weight: $font-weight-bold;
-    display: inline;
     letter-spacing: 0;
+    margin-bottom: .5em;
+    @media (min-width: $screen-md) {
+        display: inline;
+    }
 }
 
 

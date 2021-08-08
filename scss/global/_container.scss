@@ -13,8 +13,8 @@
     @media screen and (min-width: $screen-md) {
         &--large {
             @media screen and (min-width: $screen-md) {
-                padding-left: size-flexible(14);
-                padding-right: size-flexible(14);
+                padding-left: size-flexible(16);
+                padding-right: size-flexible(16);
             }
         }
 
@@ -37,8 +37,9 @@
 }
 
 .container--paragraph {
-    max-width: 55ch;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: size(8);
+    max-width: 50ch;
+    margin-bottom: size(6);
+    @media screen and (min-width: $screen-md) {
+        margin-bottom: size(12);
+    }
 }
