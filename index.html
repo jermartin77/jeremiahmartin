@@ -5,9 +5,7 @@
   <title>Jeremiah Martin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The personal website of Jeremiah Martin">
-
   <link rel="stylesheet" href="styles/styles.css">
-
 </head>
 <body id="body" class="on-negative">
 <a href="#" class="menu-link mobile" title="open menu">
@@ -21,7 +19,6 @@
     <span></span>
     <span></span>
   </a>
-
   <ul class="section-navigation-list">
     <li>
       <a class="section-navigation-link" href="#intro">About</a>
@@ -41,23 +38,25 @@
     <li>
       <a class="section-navigation-link" href="#connect">Connect</a>
     </li>
-
   </ul>
 </nav>
-
-
 <section id="intro" class="intro">
   <h1><span>Jeremiah</span> <strong>James</strong> <span>Martin</span></h1>
-
     <p id="intro-paragraph" class="container--small spacing spacing--bottom divider--bottom intro-paragraph"><strong>Howdy</strong>.
       I'm a creative director, interface designer, and front end developer. I work hard and play hard in a small corner
       of Northwest Montana. This site is a work in progress.</p>
-
-
 </section>
 <div class="slideshow-container">
   <div id="slideshow-overlay" class="slideshow-overlay"></div>
   <figure class="slideshow-item active">
+    <img src="images/cotopaxi.jpg" class="slideshow-image" alt="Cotopaxi">
+    <figcaption class="slideshow-caption">
+      <svg class="icon-camera">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Volc&aacute;n Cotopaxi, Ecuador - June 2016</span></figcaption>
+  </figure>
+  <figure class="slideshow-item">
     <img src="images/dolomites.jpg" class="slideshow-image" alt="Dolomites">
     <figcaption class="slideshow-caption">
       <svg class="icon-camera">
@@ -81,14 +80,26 @@
       </svg>
       <span>Red Eagle Valley in Glacier National Park - August 2016</span></figcaption>
   </figure>
+  <figure class="slideshow-item">
+    <img data-src="images/quito.jpg" class="slideshow-image lazyload" alt="Quito">
+    <figcaption class="slideshow-caption">
+      <svg class="icon-camera" aria-hidden="true">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Quito, Ecuador - June 2016</span></figcaption>
+  </figure>
 </div>
 <nav class="slideshow-nav" aria-hidden="true">
   <ul class="slideshow-nav-list">
-    <li><a href="#slideshow" data-index="0" title="Gruppo Sassolungo, Dolomites - June 2019"
+    <li><a href="#slideshow" data-index="0" title="Volcan Cotopaxi, Ecuador - June 2016"
            class="slideshow-nav-link active"></a></li>
-    <li><a href="#slideshow" data-index="1" title="Nightfall on Glacier National Park - January 2019"
+    <li><a href="#slideshow" data-index="1" title="Gruppo Sassolungo, Dolomites - June 2019"
+           class="slideshow-nav-link "></a></li>
+    <li><a href="#slideshow" data-index="2" title="Nightfall on Glacier National Park - January 2019"
            class="slideshow-nav-link"></a></li>
-    <li><a href="#slideshow" data-index="2" title="Red Eagle Valley in Glacier National Park - August 2016"
+    <li><a href="#slideshow" data-index="3" title="Red Eagle Valley in Glacier National Park - August 2016"
+           class="slideshow-nav-link"></a></li>
+    <li><a href="#slideshow" data-index="4" title="Quito, Ecuador - June 2016"
            class="slideshow-nav-link"></a></li>
   </ul>
 </nav>
@@ -109,16 +120,12 @@
       <li class="skills-list-item size-6" id="skill-10" data-number="10"><span>Responsive Development</span></li>
       <li class="skills-list-item size-6" id="skill-11" data-number="11"><span>Design Systems</span></li>
       <li class="skills-list-item size-7" id="skill-12" data-number="12"><span>Creative Direction</span></li>
-
-
     </ul>
   </section>
-
   <section id="portfolio" class="portfolio container--large spacing">
     <h2 class="underline">Portfolio</h2>
     <p class="container--paragraph">Interface design work comes and goes as technology and trends change. It's also a team effort to deliver solid designs that are well executed in development. These are recent examples of work that illustrates that process from concept to production. </p>
     <div class="spacing--bottom">
-
       <div class="portfolio-grid">
         <video id="portfolio-video" playsinline muted loop class="portfolio-image lazyload" width="1600" height="860"
                title="Video of a Yeti Cycles Bike Detail Page">
@@ -143,7 +150,6 @@
       </div>
     </div>
     <div>
-
       <div class="portfolio-grid size-2up">
         <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
              data-src="images/oboz-pdp-desktop-1.jpg" class="portfolio-image lazyload" width="1440" height="2500"
@@ -165,7 +171,6 @@
         Creative Direction, Interface Design, Front End Development, 2021
       </div>
     </div>
-
   </section>
 
   <section id="client-work" class="client-work container--large spacing">
@@ -186,7 +191,6 @@
       <li>Filson</li>
       <li>Nixon Watches &amp; Accessories</li>
       <li>Patagonia</li>
-
     </ul>
   </section>
   <section id="connect" class="contact container--large spacing">
@@ -220,7 +224,6 @@
       </a>
     </div>
   </section>
-
 </div>
 <svg
   aria-hidden="true"
