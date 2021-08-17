@@ -42,67 +42,79 @@
 </nav>
 <section id="intro" class="intro">
   <h1><span>Jeremiah</span> <strong>James</strong> <span>Martin</span></h1>
-    <p id="intro-paragraph" class="container--small spacing spacing--bottom divider--bottom intro-paragraph"><strong>Howdy</strong>.
-      I'm a creative director, interface designer, and front end developer. I work hard and play hard in a small corner
-      of Northwest Montana. This site is a work in progress.</p>
+  <p id="intro-paragraph" class="container--small spacing spacing--bottom divider--bottom intro-paragraph">
+    <strong>Howdy</strong>.
+    I'm a creative director, interface designer, and front end developer. I work hard and play hard in a small corner
+    of Northwest Montana. This site is a work in progress.</p>
 </section>
 <div class="slideshow-container">
   <div id="slideshow-overlay" class="slideshow-overlay"></div>
   <figure class="slideshow-item active">
-    <img src="images/cotopaxi.jpg" class="slideshow-image" alt="Cotopaxi">
-    <figcaption class="slideshow-caption">
-      <svg class="icon-camera">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Volc&aacute;n Cotopaxi, Ecuador - June 2016</span></figcaption>
+    <img src="images/cotopaxi.jpg" class="slideshow-image" alt="Volc&aacute;n Cotopaxi, Ecuador - June 2016">
   </figure>
   <figure class="slideshow-item">
-    <img src="images/dolomites.jpg" class="slideshow-image" alt="Dolomites">
-    <figcaption class="slideshow-caption">
-      <svg class="icon-camera">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Gruppo Sassolungo, Dolomites - June 2019</span></figcaption>
+    <img src="images/dolomites.jpg" class="slideshow-image" alt="Gruppo Sassolungo, Dolomites - June 2019">
   </figure>
   <figure class="slideshow-item">
-    <img data-src="images/gnp-sunset.jpg" class="slideshow-image lazyload" alt="Glacier National Park in winter">
-    <figcaption class="slideshow-caption">
-      <svg class="icon-camera" aria-hidden="true">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Nightfall on Glacier National Park - January 2019</span></figcaption>
+    <img data-src="images/gnp-sunset.jpg" class="slideshow-image lazyload"
+         alt="Nightfall on Glacier National Park - January 2019">
   </figure>
   <figure class="slideshow-item">
-    <img data-src="images/norris.jpg" class="slideshow-image lazyload" alt="Norris Traverse">
-    <figcaption class="slideshow-caption">
-      <svg class="icon-camera" aria-hidden="true">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Red Eagle Valley in Glacier National Park - August 2016</span></figcaption>
+    <img data-src="images/norris.jpg" class="slideshow-image lazyload"
+         alt="Red Eagle Valley in Glacier National Park - August 2016">
   </figure>
   <figure class="slideshow-item">
-    <img data-src="images/quito.jpg" class="slideshow-image lazyload" alt="Quito">
-    <figcaption class="slideshow-caption">
-      <svg class="icon-camera" aria-hidden="true">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Quito, Ecuador - June 2016</span></figcaption>
+    <img data-src="images/quito.jpg" class="slideshow-image lazyload" alt="Quito, Ecuador - June 2016">
+
   </figure>
 </div>
-<nav class="slideshow-nav" aria-hidden="true">
-  <ul class="slideshow-nav-list">
-    <li><a href="#slideshow" data-index="0" title="Volcan Cotopaxi, Ecuador - June 2016"
-           class="slideshow-nav-link active"></a></li>
-    <li><a href="#slideshow" data-index="1" title="Gruppo Sassolungo, Dolomites - June 2019"
-           class="slideshow-nav-link "></a></li>
-    <li><a href="#slideshow" data-index="2" title="Nightfall on Glacier National Park - January 2019"
-           class="slideshow-nav-link"></a></li>
-    <li><a href="#slideshow" data-index="3" title="Red Eagle Valley in Glacier National Park - August 2016"
-           class="slideshow-nav-link"></a></li>
-    <li><a href="#slideshow" data-index="4" title="Quito, Ecuador - June 2016"
-           class="slideshow-nav-link"></a></li>
-  </ul>
-</nav>
+<div class="slideshow-meta" aria-hidden="true">
+  <div id="slideshow-captions" class="slideshow-captions">
+    <div class="slideshow-caption active">
+      <svg class="icon-camera">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Volc&aacute;n Cotopaxi, Ecuador - June 2016</span>
+    </div>
+    <div class="slideshow-caption">
+      <svg class="icon-camera">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Gruppo Sassolungo, Dolomites - June 2019</span>
+    </div>
+    <div class="slideshow-caption">
+      <svg class="icon-camera" aria-hidden="true">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Nightfall on Glacier National Park - January 2019</span>
+    </div>
+    <div class="slideshow-caption">
+      <svg class="icon-camera" aria-hidden="true">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Red Eagle Valley in Glacier National Park - August 2016</span></div>
+    <div class="slideshow-caption">
+      <svg class="icon-camera" aria-hidden="true">
+        <use xlink:href="#icon-camera"/>
+      </svg>
+      <span>Quito, Ecuador - June 2016</span></div>
+  </div>
+  <nav class="slideshow-nav">
+    <ul class="slideshow-nav-list">
+      <li><a href="#slideshow" data-index="0" title="Volcan Cotopaxi, Ecuador - June 2016"
+             class="slideshow-nav-link active"></a></li>
+      <li><a href="#slideshow" data-index="1" title="Gruppo Sassolungo, Dolomites - June 2019"
+             class="slideshow-nav-link "></a></li>
+      <li><a href="#slideshow" data-index="2" title="Nightfall on Glacier National Park - January 2019"
+             class="slideshow-nav-link"></a></li>
+      <li><a href="#slideshow" data-index="3" title="Red Eagle Valley in Glacier National Park - August 2016"
+             class="slideshow-nav-link"></a></li>
+      <li><a href="#slideshow" data-index="4" title="Quito, Ecuador - June 2016"
+             class="slideshow-nav-link"></a></li>
+    </ul>
+  </nav>
+
+</div>
 <div id="slideshow" class="slideshow-spacer"></div>
 <div class="page on-negative">
   <section id="skills" class="skills container--large spacing">
@@ -124,12 +136,14 @@
   </section>
   <section id="portfolio" class="portfolio container--large spacing">
     <h2 class="underline">Portfolio</h2>
-    <p class="container--paragraph">Interface design work comes and goes as technology and trends change. It's also a team effort to deliver solid designs that are well executed in development. These are recent examples of work that illustrates that process from concept to production. </p>
+    <p class="container--paragraph">Interface design work comes and goes as technology and trends change. It's also a
+      team effort to deliver solid designs that are well executed in development. These are recent examples of work that
+      illustrates that process from concept to production. </p>
     <div class="spacing--bottom">
       <div class="portfolio-grid">
-        <video id="portfolio-video" playsinline muted loop class="portfolio-image lazyload" width="1600" height="860"
+        <video id="portfolio-video"  playsinline muted loop class="portfolio-image lazyload" width="1600" height="860"
                title="Video of a Yeti Cycles Bike Detail Page">
-          <source class="lazyload" src="/video/yeti-cycles.mp4"
+          <source src="/video/yeti-cycles-2.mp4"
                   type="video/mp4">
         </video>
       </div>
@@ -262,7 +276,12 @@
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
       <polyline points="22,6 12,13 2,6"></polyline>
     </symbol>
-    <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+      <rect x="2" y="9" width="4" height="12"></rect>
+      <circle cx="4" cy="4" r="2"></circle>
+    </symbol>
   </defs>
 </svg>
 

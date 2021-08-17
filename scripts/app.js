@@ -78,6 +78,8 @@ introTimeline.to('#slideshow-overlay', {
 
   // hero gallery functionality
   const $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
+  const $slideshowCaptions = document.getElementById('slideshow-captions');
+  const $slideshowCaptionItems = document.querySelectorAll('.slideshow-caption');
   const $slideshowItems = document.querySelectorAll('.slideshow-item');
   const $iconCamera = document.querySelectorAll('.icon-camera');
   let activeIdx = 0;
@@ -85,16 +87,19 @@ introTimeline.to('#slideshow-overlay', {
   $slideshowNav.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
       $slideshowNav[activeIdx].classList.remove('active');
+      $slideshowCaptionItems[activeIdx].classList.remove('active');
       $slideshowItems[activeIdx].classList.remove('active');
       activeIdx = parseInt(event.target.dataset.index);
       $slideshowNav[activeIdx].classList.add('active');
+      $slideshowCaptionItems[activeIdx].classList.add('active');
       $slideshowItems[activeIdx].classList.add('active');
     });
   });
 
   $iconCamera.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
-      event.currentTarget.classList.toggle('active')
+
+      $slideshowCaptions.classList.toggle('active')
     });
   });
 
