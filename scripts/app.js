@@ -60,7 +60,6 @@ introTimeline.to('#slideshow-overlay', {
   $menuLinks.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
       event.preventDefault();
-      console.log('menuActive', menuActive)
       if (menuActive) {
         closeMenu();
       } else {
