@@ -5,11 +5,14 @@
     &--large,
     &--medium,
     &--small {
-        padding-left: size($gutter);
-        padding-right: size($gutter);
+        padding-left: size($gutter-mobile);
+        padding-right: size($gutter-mobile);
     }
 
     @media screen and (min-width: $screen-md) {
+        padding-left: size-flexible($gutter);
+        padding-right: size-flexible($gutter);
+
         &--large {
             @media screen and (min-width: $screen-md) {
                 padding-left: size-flexible(16);
@@ -36,9 +39,9 @@
 }
 
 .container--paragraph {
-    max-width: 50ch;
-    margin-bottom: size(6);
+    max-width: 55ch;
+    margin-bottom: size(8);
     @media screen and (min-width: $screen-md) {
-        margin-bottom: size(12);
+        margin-bottom: size(16);
     }
 }

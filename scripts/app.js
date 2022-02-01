@@ -5,10 +5,10 @@ gsap.registerPlugin(ScrollTrigger)
 const introTimeline = new gsap.timeline({
     scrollTrigger: {
       trigger: "#intro",
-      start: "30% top",
-      end: "bottom top",
+      start: "40% top",
+      end: "bottom 5%",
       scrub: 0.5,
-       // markers: true
+      // markers: true
     }
   }
 );
@@ -97,7 +97,6 @@ introTimeline.to('#slideshow-overlay', {
 
   $iconCamera.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
-
       $slideshowCaptions.classList.toggle('active')
     });
   });
