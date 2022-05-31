@@ -5,8 +5,8 @@ gsap.registerPlugin(ScrollTrigger)
 const introTimeline = new gsap.timeline({
     scrollTrigger: {
       trigger: "#intro",
-      start: "40% top",
-      end: "bottom 5%",
+      start: "20% top",
+      end: "bottom 80%",
       scrub: 0.5,
       // markers: true
     }
@@ -25,7 +25,13 @@ introTimeline.to('#slideshow-overlay', {
   const $sectionNavigation = document.getElementById('section-navigation');
   const $body = document.getElementById('body');
   const $sectionNavigationLinks = document.querySelectorAll('.section-navigation-link');
-  let menuActive = false;
+  const $portfolioLinks = document.querySelectorAll('.portfolio-link');
+  const $modalClose =document.querySelectorAll('.modal-close');
+    let menuActive = false;
+  let windowScrollPosition = 0;
+  let activeModal = null;
+
+
 
   // close the menu when the body is clicked.
   $sectionNavigation.addEventListener('click', function (e) {
@@ -75,12 +81,41 @@ introTimeline.to('#slideshow-overlay', {
     });
   });
 
-  // hero gallery functionality
+
+  $portfolioLinks.forEach(function (e, i) {
+    e.addEventListener('click', function (event) {
+      event.preventDefault()
+      const modalId = event.target.hash.replace('#', '');
+      activeModal = document.getElementById(modalId);
+      activeModal.classList.add('active');
+      $body.classList.add('locked');
+      setTimeout(function(){
+        activeModal.classList.add('show');
+      }, 50);
+    });
+  });
+
+
+  $modalClose.forEach(function (e, i) {
+    e.addEventListener('click', function (event) {
+      $body.classList.remove('locked');
+      activeModal.classList.remove('show');
+      setTimeout(function(){
+        activeModal.classList.remove('active');
+      }, 550);
+    });
+  });
+
+
+
+
+
+  // photo gallery functionality
   const $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
-  const $slideshowCaptions = document.getElementById('slideshow-captions');
+  // const $slideshowCaptions = document.getElementById('slideshow-captions');
   const $slideshowCaptionItems = document.querySelectorAll('.slideshow-caption');
   const $slideshowItems = document.querySelectorAll('.slideshow-item');
-  const $iconCamera = document.querySelectorAll('.icon-camera');
+ // const $iconCamera = document.querySelectorAll('.icon-camera');
   let activeIdx = 0;
 
   $slideshowNav.forEach(function (e, i) {
@@ -95,14 +130,31 @@ introTimeline.to('#slideshow-overlay', {
     });
   });
 
-  $iconCamera.forEach(function (e, i) {
-    e.addEventListener('click', function (event) {
-      $slideshowCaptions.classList.toggle('active')
+
+
+  // intersection observer for gallery
+  const $slideshow = document.getElementById('slideshow');
+  const $slideshowMeta = document.getElementById('slideshow-meta');
+
+  function slideshowIntersection(entries) {
+    entries.map((entry) => {
+      if (entry.isIntersecting) {
+        $slideshowMeta.classList.add('active')
+      } else {
+        $slideshowMeta.classList.remove('active')
+      }
     });
-  });
+  }
+
+  const slideshowObserver = new IntersectionObserver(slideshowIntersection,
+
+    {rootMargin: `-200px 0px -200px 0px`}
+  );
+  slideshowObserver.observe($slideshow);
+
 
   // intersection observer for video
-  const $portfolioVideo = document.getElementById('portfolio-video');
+  const $portfolioVideos = document.querySelectorAll('.portfolio-video');
 
   function handleIntersection(entries) {
     entries.map((entry) => {
@@ -114,8 +166,15 @@ introTimeline.to('#slideshow-overlay', {
     });
   }
 
-  const observer = new IntersectionObserver(handleIntersection);
-  observer.observe($portfolioVideo);
+  $portfolioVideos.forEach(function (e, i) {
+    const observer = new IntersectionObserver(handleIntersection);
+    observer.observe(e);
+  });
+
+
+
+
+
 
 })();
 

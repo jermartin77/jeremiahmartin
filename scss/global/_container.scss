@@ -1,4 +1,5 @@
 .container {
+
     &--full {
     }
 
@@ -9,7 +10,7 @@
         padding-right: size($gutter-mobile);
     }
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-sm) {
         padding-left: size-flexible($gutter);
         padding-right: size-flexible($gutter);
 
@@ -22,17 +23,19 @@
 
 
         &--medium {
-            padding-left: size-flexible(24);
-            padding-right: size-flexible(24);
-        }
-
-        // used for body copy
-        &--small {
-            max-width: 40ch;
+            max-width: calc(65ch + #{size-flexible(16)});
             padding-left: size-flexible(8);
             padding-right: size-flexible(8);
             margin-left: auto;
             margin-right: auto;
+        }
+
+        // used for body copy
+        &--small {
+            max-width: 45ch;
+            padding-left: size-flexible(8);
+            padding-right: size-flexible(8);
+
 
         }
     }
@@ -40,8 +43,5 @@
 
 .container--paragraph {
     max-width: 55ch;
-    margin-bottom: size(8);
-    @media screen and (min-width: $screen-md) {
-        margin-bottom: size(16);
-    }
+    margin-bottom: 0;
 }

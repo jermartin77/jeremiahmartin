@@ -8,246 +8,421 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body id="body" class="on-negative">
-<a href="#" class="menu-link mobile" title="open menu">
-  <span></span>
-  <span></span>
-  <span></span>
-</a>
-<nav id="section-navigation" class="section-navigation" aria-hidden="true">
-  <a href="#" class="menu-link desktop" title="open menu">
+<div id="page-wrapper" class="page-wrapper">
+  <a href="#" class="menu-link mobile" title="open menu">
     <span></span>
     <span></span>
     <span></span>
   </a>
-  <ul class="section-navigation-list">
-    <li>
-      <a class="section-navigation-link" href="#intro">About</a>
-    </li>
-    <li>
-      <a class="section-navigation-link" href="#slideshow">Gallery</a>
-    </li>
-    <li>
-      <a class="section-navigation-link" href="#skills">Skills</a>
-    </li>
-    <li>
-      <a class="section-navigation-link" href="#portfolio">Portfolio</a>
-    </li>
-    <li>
-      <a class="section-navigation-link" href="#client-work">Client Work</a>
-    </li>
-    <li>
-      <a class="section-navigation-link" href="#connect">Connect</a>
-    </li>
-  </ul>
-</nav>
-<section id="intro" class="intro">
-  <h1><span>Jeremiah</span> <strong>James</strong> <span>Martin</span></h1>
-  <p id="intro-paragraph" class="container--small spacing spacing--bottom divider--bottom intro-paragraph">
-    <strong>Howdy</strong>.
-    I'm a creative director, interface designer, and front end developer. I work hard and play hard in a small corner
-    of Northwest Montana. This site will always be a work in progress but have a look around.</p>
-</section>
-<div class="slideshow-container">
-  <div id="slideshow-overlay" class="slideshow-overlay"></div>
-  <figure class="slideshow-item active">
-    <img src="images/cotopaxi.jpg" class="slideshow-image" alt="Volc&aacute;n Cotopaxi, Ecuador - June 2016">
-  </figure>
-  <figure class="slideshow-item">
-    <img src="images/dolomites.jpg" class="slideshow-image" alt="Gruppo Sassolungo, Dolomites - June 2019">
-  </figure>
-  <figure class="slideshow-item">
-    <img data-src="images/gnp-sunset.jpg" class="slideshow-image lazyload"
-         alt="Nightfall on Glacier National Park - January 2019">
-  </figure>
-  <figure class="slideshow-item">
-    <img data-src="images/norris.jpg" class="slideshow-image lazyload"
-         alt="Red Eagle Valley in Glacier National Park - August 2016">
-  </figure>
-  <figure class="slideshow-item">
-    <img data-src="images/quito.jpg" class="slideshow-image lazyload" alt="Quito, Ecuador - June 2016">
-
-  </figure>
-</div>
-<div class="slideshow-meta" aria-hidden="true">
-  <div id="slideshow-captions" class="slideshow-captions">
-    <div class="slideshow-caption active">
-      <svg class="icon-camera">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Volc&aacute;n Cotopaxi, Ecuador - June 2016</span>
-    </div>
-    <div class="slideshow-caption">
-      <svg class="icon-camera">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Gruppo Sassolungo, Dolomites - June 2019</span>
-    </div>
-    <div class="slideshow-caption">
-      <svg class="icon-camera" aria-hidden="true">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Nightfall on Glacier National Park - January 2019</span>
-    </div>
-    <div class="slideshow-caption">
-      <svg class="icon-camera" aria-hidden="true">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Red Eagle Valley in Glacier National Park - August 2016</span></div>
-    <div class="slideshow-caption">
-      <svg class="icon-camera" aria-hidden="true">
-        <use xlink:href="#icon-camera"/>
-      </svg>
-      <span>Quito, Ecuador - June 2016</span></div>
-  </div>
-  <nav class="slideshow-nav">
-    <ul class="slideshow-nav-list">
-      <li><a href="#slideshow" data-index="0" title="Volcan Cotopaxi, Ecuador - June 2016"
-             class="slideshow-nav-link active"></a></li>
-      <li><a href="#slideshow" data-index="1" title="Gruppo Sassolungo, Dolomites - June 2019"
-             class="slideshow-nav-link "></a></li>
-      <li><a href="#slideshow" data-index="2" title="Nightfall on Glacier National Park - January 2019"
-             class="slideshow-nav-link"></a></li>
-      <li><a href="#slideshow" data-index="3" title="Red Eagle Valley in Glacier National Park - August 2016"
-             class="slideshow-nav-link"></a></li>
-      <li><a href="#slideshow" data-index="4" title="Quito, Ecuador - June 2016"
-             class="slideshow-nav-link"></a></li>
+  <nav id="section-navigation" class="section-navigation" aria-hidden="true">
+    <a href="#" class="menu-link desktop" title="open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    <ul class="section-navigation-list">
+      <li>
+        <a class="section-navigation-link" href="#intro">About</a>
+      </li>
+      <li>
+        <a class="section-navigation-link" href="#portfolio">Portfolio</a>
+      </li>
+      <li>
+        <a class="section-navigation-link" href="#client-work">Client Work</a>
+      </li>
+      <li>
+        <a class="section-navigation-link" href="#skills">Skills</a>
+      </li>
+      <li>
+        <a class="section-navigation-link" href="#connect">Connect</a>
+      </li>
+      <li>
+        <a class="section-navigation-link" href="#slideshow">Photos</a>
+      </li>
     </ul>
   </nav>
-
-</div>
-<div id="slideshow" class="slideshow-spacer"></div>
-<div class="page on-negative">
-  <section id="skills" class="skills container--large spacing">
-    <h2 class="underline">Skills</h2>
-    <p class="container--paragraph">A strong background in visual design combined with a natural curiosity for diving under the hood, means I have a broad range of experience from interface design to development. I've worked in different capacities with cross-functional teams on a long list of projects resulting in a deep UI toolkit.</p>
-    <ul class="skills-list">
-      <li class="skills-list-item size-1" id="skill-1" data-number="1"><span>Vue.js</span></li>
-      <li class="skills-list-item size-2" id="skill-2" data-number="2"><span>Web Accessibility</span></li>
-      <li class="skills-list-item size-2" id="skill-3" data-number="3"><span>User Exerience</span></li>
-      <li class="skills-list-item size-3" id="skill-4" data-number="4"><span>Mentoring</span></li>
-      <li class="skills-list-item size-3" id="skill-5" data-number="5"><span>Web Performance</span></li>
-      <li class="skills-list-item size-4" id="skill-6" data-number="6"><span>Web Strategy</span></li>
-      <li class="skills-list-item size-4" id="skill-7" data-number="7"><span>Interface Design</span></li>
-      <li class="skills-list-item size-5" id="skill-8" data-number="8"><span>Responsive Design</span></li>
-      <li class="skills-list-item size-7" id="skill-9" data-number="9"><span>HTML/CSS/JS</span></li>
-      <li class="skills-list-item size-6" id="skill-10" data-number="10"><span>Responsive Development</span></li>
-      <li class="skills-list-item size-6" id="skill-11" data-number="11"><span>Design Systems</span></li>
-      <li class="skills-list-item size-7" id="skill-12" data-number="12"><span>Creative Direction</span></li>
-    </ul>
+  <section id="intro" class="intro">
+    <h1><span>Jeremiah</span> <strong>James</strong> <span>Martin</span></h1>
+    <p id="intro-paragraph" class="container--small spacing--top divider--bottom intro-paragraph">
+      <strong>Howdy</strong>.
+      I'm a creative director, interface designer, and front end developer. I work hard and play hard in a small corner
+      of Northwest Montana. This site will always be a work in progress but have a look around.</p>
   </section>
-  <section id="portfolio" class="portfolio  spacing">
-    <div class="container--large">
-      <h2 class="underline">Portfolio</h2>
-      <p class="container--paragraph">Interface design work comes and goes as technology and trends change. It's also a team effort to deliver solid designs that are well executed in development. These are recent brief examples of work that illustrates that process from concept to production. Want to know more <a href="#connect">contact me</a>.</p>
-    </div>
-    <div class="spacing--bottom">
-      <div class="portfolio-grid">
-        <div class="portfolio-grid-inner container--large">
-        <video id="portfolio-video" playsinline muted loop class="portfolio-image lazyload" width="1600" height="860"
-               title="Video of a Yeti Cycles Bike Detail Page">
-          <source src="/video/yeti-cycles-2.mp4"
-                  type="video/mp4">
-        </video>
+
+  <div class="page on-negative">
+    <section id="portfolio" class="portfolio">
+      <div class="container--large spacing--top">
+        <h2 class="underline">Portfolio</h2>
+        <p class="container--paragraph">Interface design is a constantly evolving process as trends and technology
+          change.
+          I've designed and built a ton of interfaces over the years that have come and gone. These a couple recent
+          examples of work that illustrates that process from concept to production. Want to see more? <a
+            href="#connect">Contact
+            me</a>.</p>
+
+        <div class="portfolio-section spacing--top">
+          <div class="portfolio-item">
+            <video id="portfolio-video" class="portfolio-video" playsinline muted loop width="1728" height="968"
+                   title="Video of a Yeti Cycles Bike Detail Page">
+              <source src="/video/yeti-cycles-2.mp4"
+                      type="video/mp4">
+            </video>
           </div>
-      </div>
-      <div class="portfolio-grid  size-3up">
-        <div class="portfolio-grid-inner container--large">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-             data-src="images/yeti-jared.jpg" class="portfolio-image lazyload"
-             alt="Yeti Cycles: Jared Graves Page">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-             data-src="images/yeti-nate.jpg" class="portfolio-image lazyload"
-             alt="Yeti Cycles: Nate Hills Page">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-             data-src="images/yeti-reed.jpg" class="portfolio-image lazyload"
-             alt="Yeti Cycles: Stories Landing page">
-        </div>
-      </div>
-      <div class="portfolio-caption container--large ">
-        <h3 class="porfolio-caption-heading underline">Yeti Cycles:</h3> Creative Direction, Interface Design, Front End
-        Development, 2020
-      </div>
-    </div>
-    <div>
-      <div class="portfolio-grid size-2up">
-        <div class="portfolio-grid-inner container--large">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-               data-src="images/oboz-pdp-desktop-1.jpg" class="portfolio-image lazyload" width="1440" height="2500"
-               alt="Oboz product page 2">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-               data-src="images/oboz-pdp-desktop-2.jpg" class="portfolio-image lazyload" width="1440" height="2500"
-               alt="Oboz product page 1">
-        </div>
-      </div>
-      <div class="portfolio-grid  size-1-2up">
-        <div class="portfolio-grid-inner container--large">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-             data-src="images/oboz-home-mobile.jpg" class="portfolio-image lazyload"
-             alt="Oboz product page 1" width="390" height="820">
-        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-             data-src="images/oboz-home-desktop.jpg" class="portfolio-image lazyload"
-             alt="Oboz product page 2" width="1440" height="2500">
-        </div>
-      </div>
-      <div class="portfolio-caption container--large">
-        <h3 class="porfolio-caption-heading underline">Oboz Footwear:</h3>
-        Creative Direction, Interface Design, Front End Development, 2021
-      </div>
-    </div>
-  </section>
+          <div class="portfolio-item portfolio-item-intro">
+            <h3 class="underline">Yeti Cycles</h3>
+            <p>I worked with Yeti Cycles and the ZaneRay team to build a site
+              that effectively conveys their brand highlighting rich content and imagery. It also needed to be easy to
+              manage with functional e-commerce, and serve as a pro site and B2B site.
+            </p>
+            <div class="button-row">
+              <a href="#portfolio-yeti" class="button-link portfolio-link">View the Project</a> <a
+              href="http://yeticycles.com"
+              target="_blank">Yeticycles.com</a>
+            </div>
+          </div>
 
-  <section id="client-work" class="client-work container--large spacing">
-    <h2 class="underline">Client Work</h2>
-    <p class="container--paragraph">I've been lucky to work with amazing clients in the past and present. Most of this
-      work would not be possible without the larger team at the <a href="https://www.zaneray.com" target="_blank">ZaneRay</a>
-      Group.</p>
-    <ul class="client-work-list">
-      <li>Yeti Cycles</li>
-      <li>Skullcandy</li>
-      <li>Orvis</li>
-      <li>evo.com</li>
-      <li>Oboz Footwear</li>
-      <li>Traeger Grills</li>
-      <li>Lands' End</li>
-      <li>Osprey Packs</li>
-      <li>Jackson Hole Mountain Resort</li>
-      <li>Filson</li>
-      <li>Nixon Watches &amp; Accessories</li>
-      <li>Patagonia</li>
-    </ul>
-  </section>
-  <section id="connect" class="contact container--large spacing">
-    <h2 class="underline">Connect</h2>
-    <p class="container--paragraph">Feel free to reach out or learn more.</p>
-    <div class="contact-icons">
-      <a href="mailto:jeremiahjmartin@gmail.com"><span class="sr-only">Email me</span>
-        <svg class="contact-icon" aria-hidden="true">
-          <use xlink:href="#icon-mail"/>
-        </svg>
-      </a>
-      <a href="https://www.instagram.com/jeremiahjmartin" target="_blank"><span class="sr-only">Instagram</span>
-        <svg class="contact-icon" aria-hidden="true">
-          <use xlink:href="#icon-instagram"/>
-        </svg>
-      </a>
-      <a href="https://codepen.io/jermartin77" target="_blank"><span class="sr-only">Codepen</span>
-        <svg class="contact-icon" aria-hidden="true">
-          <use xlink:href="#icon-codepen"/>
-        </svg>
-      </a>
-      <a href="https://github.com/jermartin77" target="_blank"><span class="sr-only">Github</span>
-        <svg class="contact-icon" aria-hidden="true">
-          <use xlink:href="#icon-github"/>
-        </svg>
-      </a>
-      <a href="https://github.com/jermartin77" target="_blank"><span class="sr-only">LinkedIn</span>
-        <svg class="contact-icon" aria-hidden="true">
-          <use xlink:href="#icon-linkedin"/>
-        </svg>
-      </a>
+        </div>
+
+
+        <div class="portfolio-section spacing--top ">
+          <div class="portfolio-item portfolio-item-1-2up">
+
+            <img
+              src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 390 820'%2F%3E"
+              data-src="images/oboz-home-mobile.jpg" class="portfolio-image lazyload"
+              alt="Oboz product page 1" width="390" height="820">
+            <img
+              src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1440 2500'%2F%3E"
+              data-src="images/oboz-home-desktop.jpg" class="portfolio-image lazyload"
+              alt="Oboz product page 2" width="1440" height="2500">
+
+          </div>
+          <div class="portfolio-item portfolio-item-intro">
+            <h3 class="underline">Oboz Footwear</h3>
+            <p>
+              The Oboz site was their first foray into direct-to-consumer e-commerce. The site was designed to
+              effectively articulate their product line and shoe technology as well as introduce some unique shopping
+              tools with compare and product finders.
+            </p>
+            <div class="button-row">
+              <a href="#portfolio-oboz" class="button-link portfolio-link">View the Project</a> <a
+              href="http://obozfootwear.com"
+              target="_blank">obozfootwear.com</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </section>
+    <section id="client-work" class="client-work container--large spacing--top">
+      <h2 class="underline">Client Work</h2>
+      <p class="container--paragraph spacing--bottom small">I've been lucky to work with amazing clients in the past and
+        present. Most of this
+        work would not be possible without the larger team at the <a href="https://www.zaneray.com" target="_blank">ZaneRay</a>
+        Group.</p>
+      <ul class="client-work-list">
+        <li>Yeti Cycles</li>
+        <li>Skullcandy</li>
+        <li>Orvis</li>
+        <li>evo.com</li>
+        <li>Oboz Footwear</li>
+        <li>Traeger Grills</li>
+        <li>Lands' End</li>
+        <li>Osprey Packs</li>
+        <li>Jackson Hole Mountain Resort</li>
+        <li>Filson</li>
+        <li>Nixon Watches &amp; Accessories</li>
+        <li>Patagonia</li>
+      </ul>
+    </section>
+    <section id="skills" class="skills container--large spacing--top">
+      <h2 class="underline">Skills</h2>
+      <p class="container--paragraph spacing--bottom small">A strong background in visual design combined with a natural
+        curiosity for diving
+        under the hood, means I have a broad range of experience from interface design to development. I've worked in
+        different capacities with cross-functional teams on a long list of projects resulting in a deep UI toolkit.</p>
+      <ul class="skills-list">
+        <li class="skills-list-item size-1" id="skill-1" data-number="1"><span>Vue.js</span></li>
+        <li class="skills-list-item size-2" id="skill-2" data-number="2"><span>Web Accessibility</span></li>
+        <li class="skills-list-item size-2" id="skill-3" data-number="3"><span>User Exerience</span></li>
+        <li class="skills-list-item size-3" id="skill-4" data-number="4"><span>Mentoring</span></li>
+        <li class="skills-list-item size-3" id="skill-5" data-number="5"><span>Web Performance</span></li>
+        <li class="skills-list-item size-4" id="skill-6" data-number="6"><span>Web Strategy</span></li>
+        <li class="skills-list-item size-4" id="skill-7" data-number="7"><span>Interface Design</span></li>
+        <li class="skills-list-item size-5" id="skill-8" data-number="8"><span>Responsive Design</span></li>
+        <li class="skills-list-item size-7" id="skill-9" data-number="9"><span>HTML/CSS/JS</span></li>
+        <li class="skills-list-item size-6" id="skill-10" data-number="10"><span>Responsive Development</span></li>
+        <li class="skills-list-item size-6" id="skill-11" data-number="11"><span>Design Systems</span></li>
+        <li class="skills-list-item size-7" id="skill-12" data-number="12"><span>Creative Direction</span></li>
+      </ul>
+    </section>
+    <section id="connect" class="contact container--large spacing">
+      <h2 class="underline">Connect</h2>
+      <p class="container--paragraph spacing--bottom small">Feel free to reach out or learn more.</p>
+      <div class="contact-icons">
+        <a href="mailto:jeremiahjmartin@gmail.com"><span class="sr-only">Email me</span>
+          <svg class="contact-icon" aria-hidden="true">
+            <use xlink:href="#icon-mail"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/jeremiahjmartin" target="_blank"><span class="sr-only">Instagram</span>
+          <svg class="contact-icon" aria-hidden="true">
+            <use xlink:href="#icon-instagram"/>
+          </svg>
+        </a>
+        <a href="https://codepen.io/jermartin77" target="_blank"><span class="sr-only">Codepen</span>
+          <svg class="contact-icon" aria-hidden="true">
+            <use xlink:href="#icon-codepen"/>
+          </svg>
+        </a>
+        <a href="https://github.com/jermartin77" target="_blank"><span class="sr-only">Github</span>
+          <svg class="contact-icon" aria-hidden="true">
+            <use xlink:href="#icon-github"/>
+          </svg>
+        </a>
+        <a href="https://github.com/jermartin77" target="_blank"><span class="sr-only">LinkedIn</span>
+          <svg class="contact-icon" aria-hidden="true">
+            <use xlink:href="#icon-linkedin"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+  </div>
+  <div class="slideshow-container">
+    <div id="slideshow-overlay" class="slideshow-overlay"></div>
+    <figure class="slideshow-item active">
+      <img src="images/cotopaxi.jpg" class="slideshow-image" alt="Volc&aacute;n Cotopaxi, Ecuador - June 2016">
+    </figure>
+    <figure class="slideshow-item">
+      <img src="images/dolomites.jpg" class="slideshow-image" alt="Gruppo Sassolungo, Dolomites - June 2019">
+    </figure>
+    <figure class="slideshow-item">
+      <img data-src="images/gnp-sunset.jpg" class="slideshow-image lazyload"
+           alt="Nightfall on Glacier National Park - January 2019">
+    </figure>
+    <figure class="slideshow-item">
+      <img data-src="images/norris.jpg" class="slideshow-image lazyload"
+           alt="Red Eagle Valley in Glacier National Park - August 2016">
+    </figure>
+    <figure class="slideshow-item">
+      <img data-src="images/quito.jpg" class="slideshow-image lazyload" alt="Quito, Ecuador - June 2016">
+    </figure>
+  </div>
+  <div id="slideshow-meta" class="slideshow-meta" aria-hidden="true">
+    <div id="slideshow-captions" class="slideshow-captions">
+      <div class="slideshow-caption active">
+        Volc&aacute;n Cotopaxi, Ecuador - June 2016
+      </div>
+      <div class="slideshow-caption">
+        Gruppo Sassolungo, Dolomites - June 2019
+      </div>
+      <div class="slideshow-caption">
+
+        Nightfall on Glacier National Park - January 2019
+      </div>
+      <div class="slideshow-caption">
+        Red Eagle Valley in Glacier National Park - August 2016
+      </div>
+      <div class="slideshow-caption">
+        Quito, Ecuador - June 2016
+      </div>
     </div>
-  </section>
+    <nav class="slideshow-nav">
+      <ul class="slideshow-nav-list">
+        <li><a href="#slideshow" data-index="0" title="Volcan Cotopaxi, Ecuador - June 2016"
+               class="slideshow-nav-link active"></a></li>
+        <li><a href="#slideshow" data-index="1" title="Gruppo Sassolungo, Dolomites - June 2019"
+               class="slideshow-nav-link "></a></li>
+        <li><a href="#slideshow" data-index="2" title="Nightfall on Glacier National Park - January 2019"
+               class="slideshow-nav-link"></a></li>
+        <li><a href="#slideshow" data-index="3" title="Red Eagle Valley in Glacier National Park - August 2016"
+               class="slideshow-nav-link"></a></li>
+        <li><a href="#slideshow" data-index="4" title="Quito, Ecuador - June 2016"
+               class="slideshow-nav-link"></a></li>
+      </ul>
+    </nav>
+
+  </div>
+  <div id="slideshow" class="slideshow-spacer"></div>
 </div>
+
+<section class="modal" id="portfolio-yeti">
+  <button class="modal-close">Close</button>
+  <div class="container--medium spacing--bottom">
+    <div class="spacing--bottom small">
+      <h2 class="underline">Yeti Cycles</h2>
+      <h3 class="heading-5"> Creative Direction, Interface Design, Front End Development, 2020</h3>
+    </div>
+    <p>I worked with Yeti Cycles and the ZaneRay team to build a site
+      that effectively conveys the brand, is shoppable, and serves as a pro site and B2B site. The end result is
+      an effective vehicle for Yeti to deliver robust content on a regular basis, serve up highly experiential
+      pages that articulate their technology and design as well as convert shoppers.
+    </p>
+  </div>
+  <div class="spacing--bottom small container--medium">
+    <h4 class="underline">Bike Details</h4>
+    <p>Bike pages contain a mix of luscious photography, technical data, product configuration, and interactive features
+      to give users a rich in-depth look at these premium bikes.
+    </p>
+  </div>
+  <div class="container--large spacing--bottom">
+    <video class="portfolio-image portfolio-video" playsinline muted loop width="1728" height="968"
+           title="Video of a Yeti Cycles Bike Detail Page">
+      <source src="/video/yeti-cycles-2.mp4"
+              type="video/mp4">
+    </video>
+  </div>
+
+
+  <div class="spacing--bottom small container--medium">
+    <h4 class="underline">Product Details</h4>
+    <p>Yeti has a wide range of products, from premium apparel to replacement parts and water bottles. We designed and
+      built a page that is extensible and supports rich on model and action photography or can be stripped down to focus
+      on the basics.
+    </p>
+  </div>
+  <div class="container--large spacing--bottom">
+    <div class="portfolio-grid size-1-3up">
+      <div class="portfolio-grid-inner">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 390 3238'%2F%3E"
+          data-src="images/yeti/yeti-pdp-mobile.jpg" class="portfolio-image lazyload"
+          alt="Mobile Product Details" width="390" height="3238">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1170 3238'%2F%3E"
+          data-src="images/yeti/yeti-pdp-desktop.jpg" class="portfolio-image lazyload"
+          alt="Desktop Product Details" width="1170" height="3238">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="spacing--bottom small container--medium">
+    <h4 class="underline">Team and Community</h4>
+    <p>Racing, Ambassadors, and Stories are a long-standing part of who Yeti is as a company. I designed and built a
+      best-in-class system of reusable components to leverage Yeti’s rich content and storytelling in an engaging way.
+    </p>
+  </div>
+  <div class="container--large spacing--bottom">
+    <div class="portfolio-grid size-3up">
+      <div class="portfolio-grid-inner">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 780 1640'%2F%3E"
+          data-src="images/yeti/yeti-jared.jpg" class="portfolio-image lazyload"
+          alt="Yeti Team Jared Graves" width="780" height="1640">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 780 1640'%2F%3E"
+          data-src="images/yeti/yeti-nate.jpg" class="portfolio-image lazyload"
+          alt="yeti style guide 2" width="780" height="1640">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 780 1640'%2F%3E"
+          data-src="images/yeti/yeti-reed.jpg" class="portfolio-image lazyload"
+          alt="yeti style guide 2" width="780" height="1640">
+      </div>
+    </div>
+  </div>
+  <div class="container--medium spacing--bottom small">
+    <h4 class="underline">Design System</h4>
+    <p>Under the hood is a robust design system based on atomic design principles and reusable components that directly
+      maps to the front-end framework.
+    </p>
+  </div>
+  <div class="container--large spacing--bottom small">
+    <div class="portfolio-grid size-2up">
+      <div class="portfolio-grid-inner">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1000 3800'%2F%3E"
+          data-src="images/yeti/yeti-style-guide-1.jpg" class="portfolio-image lazyload"
+          alt="yeti style guide 1" width="1000" height="3800">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1000 3800'%2F%3E"
+          data-src="images/yeti/yeti-style-guide-2.jpg" class="portfolio-image lazyload"
+          alt="yeti style guide 2" width="1000" height="3800">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-button-row container">
+    <a href="http://yeticycles.com" class="button-link" target="_blank">View the Website</a>
+  </div>
+</section>
+<section class="modal" id="portfolio-oboz">
+  <button class="modal-close">Close</button>
+  <div class="container--medium spacing--bottom">
+    <div class="spacing--bottom small">
+      <h2 class="underline">Oboz Footwear</h2>
+      <h3 class="heading-5"> Creative Direction, Interface Design, Front End Development, 2021</h3>
+    </div>
+    <p>
+      The Oboz site was their first foray into direct-to-consumer e-commerce. The site was designed to effectively
+      articulate their product line and shoe technology as well as introduce some unique shopping tools with compare and
+      product finders. This is built on a solid design system foundation coupled with reusable components that leverage
+      headless e-commerce and a CMS.
+    </p>
+  </div>
+
+  <div class="container--large spacing--bottom">
+    <div class="portfolio-grid size-2up">
+      <div class="portfolio-grid-inner">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1440 2500'%2F%3E"
+          data-src="images/oboz/oboz-pdp-desktop-1.jpg" class="portfolio-image lazyload"
+          alt="Mobile Product Details" width="1440" height="2500">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1440 2500'%2F%3E"
+          data-src="images/oboz/oboz-pdp-desktop-2.jpg" class="portfolio-image lazyload"
+          alt="Desktop Product Details" width="1440" height="2500">
+      </div>
+    </div>
+  </div>
+
+  <div class="spacing--bottom small container--medium">
+    <h4 class="underline">Compare</h4>
+    <p>To help users understand the difference between each product I introduced a visual compare tool to more clearly
+      articulate the variations as part of product details.
+    </p>
+  </div>
+  <div class="container--large spacing--bottom">
+    <img
+      src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1680 1299'%2F%3E"
+      data-src="images/oboz/oboz-compare.jpg" class="portfolio-image lazyload"
+      alt="Compare" width="1680" height="1299">
+  </div>
+
+
+  <div class="spacing--bottom small container--medium">
+    <h4 class="underline">Series Pages</h4>
+    <p>Underpinning the Oboz site is a series of reusable components that allows them to create Series landing pages or
+      other custom content as they introduce new product lines. These pages effectively articulate the features and
+      benefits of each line.
+    </p>
+  </div>
+  <div class="container--large spacing--bottom small">
+    <div class="portfolio-grid size-1-3up">
+      <div class="portfolio-grid-inner">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 390 3117'%2F%3E"
+          data-src="images/oboz/oboz-series-mobile.jpg" class="portfolio-image lazyload"
+          alt="Mobile Product Details" width="390" height="3117">
+        <img
+          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' viewBox%3D'0 0 1170 3117'%2F%3E"
+          data-src="images/oboz/oboz-series-desktop.jpg" class="portfolio-image lazyload"
+          alt="Desktop Product Details" width="1170" height="3117">
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-button-row container">
+    <a href="http://obozfootwear.com" class="button-link" target="_blank">View the Website</a>
+  </div>
+
+
+</section>
+
+
 <svg
   aria-hidden="true"
   focusable="false"

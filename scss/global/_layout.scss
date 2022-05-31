@@ -7,6 +7,10 @@ body {
     margin: 0;
     text-align: center;
 
+    &.locked {
+        overflow: hidden;
+    }
+
 }
 
 * {
@@ -25,4 +29,9 @@ video {
     z-index: $z-index-page;
     -webkit-backface-visibility: hidden;
     text-align: left;
+}
+
+
+[inert] > * {
+    opacity: .5;
 }

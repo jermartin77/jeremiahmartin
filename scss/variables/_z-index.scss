@@ -3,3 +3,4 @@ $z-index-base: 100;
 $z-index-below-page: $z-index-base - 50;
 $z-index-page: $z-index-base + 10;
 $z-index-above-page: $z-index-base + 50;
+$z-index-modal: $z-index-above-page + 50;
