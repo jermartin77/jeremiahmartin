@@ -31,8 +31,7 @@ $menu-width: size(6);
     &.mobile {
         position: fixed;
         top: size(2);
-        left: 50%;
-        transform: translate(-50%, 0);
+        left: size(2);
         width: size(5);
         height: size(5);
         @media (min-width: $screen-md) {
@@ -50,8 +49,7 @@ $menu-width: size(6);
             display: block;
             position: absolute;
             left: calc(100% + #{size($gutter)});
-            top: 50%;
-            transform: translate(0, -50%);
+            top: size($gutter);
 
             .active & {
                 left: calc(100% - #{$menu-width} - #{size(2)});
