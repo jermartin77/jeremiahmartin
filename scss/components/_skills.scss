@@ -125,24 +125,24 @@
 
     &[data-number='1'] {
         bottom: 0%;
-        right: 3%;
+        right: 0%;
      }
 
     &[data-number='2'] {
         bottom: 2%;
         left: 25%;
         @media (min-width: $screen-md) {
-            bottom: 6%;
-            left: 37%;
+            bottom: 11%;
+            left: 35%;
         }
     }
 
     &[data-number='3'] {
-        bottom: 5%;
-        left: 52%;
+        bottom: 2%;
+        left: 46%;
         @media (min-width: $screen-md) {
-            bottom: 4%;
-            left: 54%;
+            bottom:-1%;
+            left: 48%;
         }
     }
 
@@ -162,7 +162,7 @@
 
     &[data-number='6'] {
         top: 0%;
-        right: 15%;
+        right: 5%;
     }
 
     &[data-number='7'] {
