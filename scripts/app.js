@@ -38,9 +38,12 @@ introTimeline.to('#slideshow-overlay', {
     e.stopPropagation();
   })
 
-  $body.addEventListener('keydown', function (e) {
+
+
+  document.addEventListener('keydown', function (e) {
     if (e.key == 'Escape') {
       closeMenu();
+      closeModal();
     }
   })
 
@@ -60,6 +63,14 @@ introTimeline.to('#slideshow-overlay', {
     $menuLinks[0].classList.remove('active');
     $menuLinks[1].classList.remove('active');
     menuActive = false;
+  }
+
+  function closeModal() {
+    $body.classList.remove('locked');
+    activeModal.classList.remove('show');
+    setTimeout(function(){
+      activeModal.classList.remove('active');
+    }, 550);
   }
 
 
@@ -98,11 +109,7 @@ introTimeline.to('#slideshow-overlay', {
 
   $modalClose.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
-      $body.classList.remove('locked');
-      activeModal.classList.remove('show');
-      setTimeout(function(){
-        activeModal.classList.remove('active');
-      }, 550);
+      closeModal();
     });
   });
 

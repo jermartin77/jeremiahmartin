@@ -12,6 +12,10 @@
         @include spacing(bottom);
     }
 
+    & > p:last-child {
+        margin-bottom: 0;
+    }
+
 
 
     &.divider,
