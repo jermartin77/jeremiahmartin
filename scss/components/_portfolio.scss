@@ -175,9 +175,6 @@
     max-height: 100%;
     margin-left: auto;
     margin-right: auto;
-    //height: 100%;
-    //width: 100%;
-    //max-width: 200%;
 
     @media (min-width: $screen-sm) {
         width: auto;
@@ -191,6 +188,11 @@
     .lazyloaded {
         opacity: 1;
     }
+}
+
+.portfolio-video {
+    border-radius: size-flexible(1.5);
+    box-shadow: 0 0 size-flexible(4) rgba(0, 0, 0, .7);
 }
 
 .portfolio-caption {

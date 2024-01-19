@@ -1,12 +1,12 @@
 @mixin spacing($position: default) {
-    padding-top: size(16);
+    padding-top: size(14);
     padding-bottom: size(16);
     margin-bottom: 0;
     margin-top: 0;
 
     @media screen and (min-width: $screen-md) {
-        padding-top: size(24);
-        padding-bottom: size(24);
+        padding-top: size(22);
+        padding-bottom: size(22);
     }
 
 
