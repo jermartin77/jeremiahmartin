@@ -1,7 +1,6 @@
 gsap.registerPlugin(ScrollTrigger)
 
 // Fade in effect for gallery
-
 const introTimeline = new gsap.timeline({
     scrollTrigger: {
       trigger: "#intro",
@@ -17,29 +16,26 @@ introTimeline.to('#slideshow-overlay', {
   opacity: 0,
 });
 
-
 (function () {
-
-  // navigation
   const $menuLinks = document.querySelectorAll('.menu-link');
   const $sectionNavigation = document.getElementById('section-navigation');
   const $body = document.getElementById('body');
   const $sectionNavigationLinks = document.querySelectorAll('.section-navigation-link');
   const $portfolioLinks = document.querySelectorAll('.portfolio-link');
   const $modalClose =document.querySelectorAll('.modal-close');
-    let menuActive = false;
-  let windowScrollPosition = 0;
+  const $portfolioVideos = document.querySelectorAll('.portfolio-video');
+  const $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
+  const $slideshowCaptionItems = document.querySelectorAll('.slideshow-caption');
+  const $slideshowItems = document.querySelectorAll('.slideshow-item');
+
+  let menuActive = false;
   let activeModal = null;
 
-
-
-  // close the menu when the body is clicked.
   $sectionNavigation.addEventListener('click', function (e) {
     e.stopPropagation();
   })
 
-
-
+  // close modals or menu when escape clicked
   document.addEventListener('keydown', function (e) {
     if (e.key == 'Escape') {
       closeMenu();
@@ -52,8 +48,6 @@ introTimeline.to('#slideshow-overlay', {
     setTimeout(function () {
       $body.addEventListener('click', closeMenu);
     }, 300);
-
-
     menuActive = true;
   }
 
@@ -73,7 +67,6 @@ introTimeline.to('#slideshow-overlay', {
     }, 550);
   }
 
-
   $menuLinks.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
       event.preventDefault();
@@ -86,13 +79,14 @@ introTimeline.to('#slideshow-overlay', {
     });
   });
 
+  // close the menu when a anchor link is clicked
   $sectionNavigationLinks.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
       closeMenu();
     });
   });
 
-
+  // when a portfolio link is clicked open the modal
   $portfolioLinks.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
       event.preventDefault()
@@ -106,23 +100,13 @@ introTimeline.to('#slideshow-overlay', {
     });
   });
 
-
   $modalClose.forEach(function (e, i) {
     e.addEventListener('click', function (event) {
       closeModal();
     });
   });
 
-
-
-
-
   // photo gallery functionality
-  const $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
-  // const $slideshowCaptions = document.getElementById('slideshow-captions');
-  const $slideshowCaptionItems = document.querySelectorAll('.slideshow-caption');
-  const $slideshowItems = document.querySelectorAll('.slideshow-item');
- // const $iconCamera = document.querySelectorAll('.icon-camera');
   let activeIdx = 0;
 
   $slideshowNav.forEach(function (e, i) {
@@ -136,8 +120,6 @@ introTimeline.to('#slideshow-overlay', {
       $slideshowItems[activeIdx].classList.add('active');
     });
   });
-
-
 
   // intersection observer for gallery
   const $slideshow = document.getElementById('slideshow');
@@ -154,15 +136,11 @@ introTimeline.to('#slideshow-overlay', {
   }
 
   const slideshowObserver = new IntersectionObserver(slideshowIntersection,
-
     {rootMargin: `-200px 0px -200px 0px`}
   );
   slideshowObserver.observe($slideshow);
 
-
-  // intersection observer for video
-  const $portfolioVideos = document.querySelectorAll('.portfolio-video');
-
+  // intersection observer for video plays the video when it's in viewport pauses when it's not to avoid bogging down the browser
   function handleIntersection(entries) {
     entries.map((entry) => {
       if (entry.isIntersecting) {
@@ -177,12 +155,6 @@ introTimeline.to('#slideshow-overlay', {
     const observer = new IntersectionObserver(handleIntersection);
     observer.observe(e);
   });
-
-
-
-
-
-
 })();
 
 
