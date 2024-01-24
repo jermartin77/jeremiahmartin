@@ -5,10 +5,10 @@ gsap.registerPlugin(ScrollTrigger)
 const introTimeline = new gsap.timeline({
     scrollTrigger: {
       trigger: "#intro",
-      start: "20% top",
+      start: "30% top",
       end: "bottom 80%",
       scrub: 0.5,
-      // markers: true
+      markers: false
     }
   }
 );
