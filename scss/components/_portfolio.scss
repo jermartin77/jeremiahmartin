@@ -58,6 +58,9 @@
         -webkit-overflow-scrolling: touch;
         margin-left: 0;
         margin-right: 0;
+        display: flex;
+        justify-content: center;
+
     }
 
     &.size-2up,
@@ -160,12 +163,13 @@
 
 .portfolio-grid-inner {
     gap: size($gutter);
-    padding-top: size($gutter);
+    //padding-top: size($gutter);
     padding-bottom: size($gutter);
     width: fit-content;
     display: flex;
     align-items: stretch;
     height: 100%;
+    max-width: 1600px;
 }
 
 .portfolio-image {
@@ -175,6 +179,7 @@
     max-height: 100%;
     margin-left: auto;
     margin-right: auto;
+
 
     @media (min-width: $screen-sm) {
         width: auto;
