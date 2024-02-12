@@ -1,8 +1,7 @@
 # jeremiahmartin.com
-The personal website of Jeremiah Martin. A place to play, learn and explore new technologies and ideas.
+The personal website of Jeremiah Martin. A place to play, learn and explore new technologies and ideas. This package includes a simple node server, hot reloading of HTML, CSS and JS and SCSS compiler. 
 
-##Coming Soon
-* Upgrade to Webpack
-* Integrate Web Components
-* Generate Style Guide
+## To Run this Project
+* `npm install`
+* `npm run dev`
 
