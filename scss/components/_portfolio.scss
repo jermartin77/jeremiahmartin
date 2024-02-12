@@ -4,7 +4,6 @@
         gap: size-flexible(8);
         align-items: center;
 
-
         &:nth-child(2n) {
             flex-direction: row-reverse;
         }
@@ -45,7 +44,6 @@
     max-width: 55ch;
 }
 
-
 .portfolio-grid {
     overflow-x: auto;
     overflow-y: hidden;
@@ -60,11 +58,9 @@
         margin-right: 0;
         display: flex;
         justify-content: center;
-
     }
 
     &.size-2up,
-
     &.size-1-2up,
     &.size-1-3up,
     &.size-3up,
@@ -72,7 +68,6 @@
         .portfolio-grid-inner {
             padding-left: size($gutter-mobile);
             padding-right: size($gutter-mobile);
-
 
             @media (min-width: $screen-sm) {
                 display: grid;
@@ -95,14 +90,6 @@
             }
         }
     }
-
-
-    //&.size-2up {
-    //    .portfolio-image {
-    //        height: 800px;
-    //    }
-    //}
-
 
     &.size-3up {
         .portfolio-image {
@@ -163,7 +150,6 @@
 
 .portfolio-grid-inner {
     gap: size($gutter);
-    //padding-top: size($gutter);
     padding-bottom: size($gutter);
     width: fit-content;
     display: flex;
@@ -179,7 +165,6 @@
     max-height: 100%;
     margin-left: auto;
     margin-right: auto;
-
 
     @media (min-width: $screen-sm) {
         width: auto;

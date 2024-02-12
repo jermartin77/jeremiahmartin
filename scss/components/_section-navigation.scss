@@ -55,7 +55,6 @@ $menu-width: size(6);
                 left: calc(100% - #{$menu-width} - #{size(2)});
             }
 
-
             &:hover {
                 background: rgba($color-primary-500, .9);
 
@@ -117,7 +116,6 @@ $menu-width: size(6);
         margin-top: size(2);
         margin-bottom: size(2);
     }
-
 }
 
 .section-navigation-link {

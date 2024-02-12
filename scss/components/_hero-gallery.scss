@@ -41,15 +41,12 @@
     z-index: $z-index-base - 1;
     transition: all 1s $transition-ease-out-cubic;
 
-
-
     @media (min-width: $screen-md) {
         padding-top: size($gutter * 3);
         padding-left: size($gutter);
         padding-right: size($gutter);
         padding-bottom: size(2);
     }
-
 
     &.active {
         opacity: 1;
@@ -61,7 +58,6 @@
     position: relative;
     height: 1.5em;
 }
-
 
 .slideshow-caption {
     opacity: 0;
@@ -78,10 +74,6 @@
         opacity: 1;
         z-index: $z-index-below-page + 3;
     }
-}
-
-.slideshow-nav {
-
 }
 
 .slideshow-nav-list {

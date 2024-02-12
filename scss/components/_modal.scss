@@ -23,7 +23,6 @@
     }
 }
 
-
 .modal-close {
     position: fixed;
     right: 0;
@@ -37,7 +36,6 @@
     font-size: 0;
     cursor: pointer;
     transition: .3s background-color ease-out;
-
 
     &:hover {
         background: $color-gray-1000;
@@ -53,7 +51,6 @@
         display: block;
         top: calc(50% - 1px);
         position: absolute;
-
     }
 
     &:before {
@@ -63,5 +60,4 @@
     &:after {
         transform: translate(0, 0) rotate(-45deg);
     }
-
 }

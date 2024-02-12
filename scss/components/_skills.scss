@@ -2,14 +2,10 @@
     background-color: rgba($color-gray-800, $opacity);
 
     &:hover {
-
         background-color: rgba($color-primary-400, $opacity * 2.5);
-        //transform: translate(percentage((random(11) - 6) / 100), percentage((random(11) - 6) / 100)) scale(1.05);
         transform: scale(1.05);
     }
 }
-
-
 
 .skills-list {
     padding: 0;
@@ -23,7 +19,6 @@
         padding-bottom: 60%;
     }
 }
-
 
 .skills-list-item {
     font-size: size-flexible(6);
@@ -39,7 +34,6 @@
     align-items: center;
     position: absolute;
     cursor: pointer;
-
     transition: background-color $transition-duration-long $transition-ease-out-quart, transform  $transition-duration-long cubic-bezier(0.34, 1.56, 0.64, 1);
 
     @media (min-width: $screen-md) {
@@ -49,9 +43,6 @@
     &:hover {
         z-index: $z-index-page + 1;
     }
-
-    //transform: translate(-50%, -50%);
-    // top: calc(#{percentage(random(100) / 100)} - 20vw);
 
     &.size-1 {
         height: 20vw;
@@ -172,7 +163,6 @@
             top: 50%;
             left: 0%;
         }
-
     }
 
     &[data-number='8'] {
@@ -192,7 +182,6 @@
             left: 46%;
         }
     }
-
 
     &[data-number='10'] {
         top: 30%;
