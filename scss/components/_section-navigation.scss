@@ -27,6 +27,7 @@ $menu-width: size(6);
     height: $menu-width;
     transition: all $transition-duration-base $transition-ease-out-cubic;
     background: $semi-transparent-black;
+    border-radius: 4px;
 
     &.mobile {
         position: fixed;
@@ -74,6 +75,7 @@ $menu-width: size(6);
         width: 60%;
         background-color: $color-white;
         transition: all $transition-duration-base $transition-ease-out-cubic;
+        border-radius: 2px;
 
         &:nth-child(1) {
             transform: translate(0, -8px);
