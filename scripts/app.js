@@ -24,9 +24,10 @@ introTimeline.to('#slideshow-overlay', {
   const $portfolioLinks = document.querySelectorAll('.portfolio-link');
   const $modalClose =document.querySelectorAll('.modal-close');
   const $portfolioVideos = document.querySelectorAll('.portfolio-video');
-  const $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
-  const $slideshowCaptionItems = document.querySelectorAll('.slideshow-caption');
-  const $slideshowItems = document.querySelectorAll('.slideshow-item');
+  const $slideshows = document.querySelectorAll('.slideshow');
+  // const $slideshowNav = document.querySelectorAll('.slideshow-nav-link');
+  // const $slideshowCaptionItems = document.querySelectorAll('.slideshow-caption');
+  // const $slideshowItems = document.querySelectorAll('.slideshow-item');
 
   let menuActive = false;
   let activeModal = null;
@@ -106,31 +107,62 @@ introTimeline.to('#slideshow-overlay', {
     });
   });
 
-  // photo gallery functionality
-  let activeIdx = 0;
 
-  $slideshowNav.forEach(function (e, i) {
-    e.addEventListener('click', function (event) {
-      $slideshowNav[activeIdx].classList.remove('active');
-      $slideshowCaptionItems[activeIdx].classList.remove('active');
-      $slideshowItems[activeIdx].classList.remove('active');
-      activeIdx = parseInt(event.target.dataset.index);
-      $slideshowNav[activeIdx].classList.add('active');
-      $slideshowCaptionItems[activeIdx].classList.add('active');
-      $slideshowItems[activeIdx].classList.add('active');
+  $slideshows.forEach((e) => {
+    slideshow = e;
+    const slideshowNavLinks = slideshow.querySelectorAll('.slideshow-nav-link');
+    const slideshowImages = slideshow.querySelectorAll('.slideshow-image');
+    const slideshowCaptions = slideshow.querySelectorAll('.slideshow-caption');
+    const autorotate = Boolean(slideshow.dataset.rotate);
+    let activeIdx = 0;
+    let rotationTimer;
+    let slideshowObserver;
+
+    // move to the next slide
+    function nextSlide(nextIdx) {
+      slideshowNavLinks[activeIdx].classList.remove('active');
+      slideshowCaptions[activeIdx].classList.remove('active');
+      slideshowImages[activeIdx].classList.remove('active');
+      slideshowNavLinks[nextIdx].classList.add('active');
+      slideshowCaptions[nextIdx].classList.add('active');
+      slideshowImages[nextIdx].classList.add('active');
+      activeIdx = nextIdx;
+      let slideshowObserver;
+    }
+
+    // bind click events to all the buttons
+    slideshowNavLinks.forEach((e)=> {
+      e.addEventListener('click', () => {
+        clearTimeout(rotationTimer);
+        const nextIdx = parseInt(event.target.dataset.index);
+        nextSlide(nextIdx);
+      });
+
+      e.addEventListener('mouseenter', () => {
+        clearTimeout(rotationTimer);
+      });
     });
+
+    if (autorotate) {
+     rotationTimer =  setInterval(function() {
+     const nextIdx = (activeIdx < slideshowNavLinks.length - 1) ? activeIdx + 1 : 0;
+      nextSlide(nextIdx);
+      }, 5000);
+    }
   });
 
-  // intersection observer for gallery
-  const $slideshow = document.getElementById('slideshow');
-  const $slideshowMeta = document.getElementById('slideshow-meta');
+
+
+  // intersection observer for footer gallery
+  const backgroundSlideshow = document.getElementById('background-slideshow');
+  const slideshowMeta = document.getElementById('slideshow-meta');
 
   function slideshowIntersection(entries) {
     entries.map((entry) => {
       if (entry.isIntersecting) {
-        $slideshowMeta.classList.add('active')
+        slideshowMeta.classList.add('active')
       } else {
-        $slideshowMeta.classList.remove('active')
+        slideshowMeta.classList.remove('active')
       }
     });
   }
@@ -138,7 +170,7 @@ introTimeline.to('#slideshow-overlay', {
   const slideshowObserver = new IntersectionObserver(slideshowIntersection,
     {rootMargin: `-200px 0px -200px 0px`}
   );
-  slideshowObserver.observe($slideshow);
+  slideshowObserver.observe(backgroundSlideshow);
 
   // intersection observer for video plays the video when it's in viewport pauses when it's not to avoid bogging down the browser
   function handleIntersection(entries) {

@@ -44,8 +44,6 @@ h2,
     @media (min-width: $screen-md) {
         font-size: size-flexible(8);
     }
-
-
 }
 
 h3,
@@ -53,31 +51,27 @@ h3,
     font-size: size(4);
 }
 
-
 h4,
 .heading-4 {
     font-size: size(3);
 }
 
 
-
 h5,
 .heading-5 {
     font-size: size(2);
+    line-height: 1.25;
 }
-
 
 .tracked {
     letter-spacing: $letter-spacing-tracked;
 }
-
 
 p {
     font-size: size(2);
     line-height: $line-height-base;
     margin-bottom: 2em;
     margin-top: 0;
-
 
     &:last-child {
         margin-bottom: 0;
@@ -96,7 +90,19 @@ p {
 }
 
 ul {
+    font-size: size(2);
     line-height: $line-height-base;
+    margin-top: size(2);
+    margin-bottom: size(2);
+
+    @media (min-width: $screen-md) {
+        font-size: size(2.25);
+    }
+
+    li {
+        margin-top: size(1);
+        margin-bottom: size(1);
+    }
 }
 
 
