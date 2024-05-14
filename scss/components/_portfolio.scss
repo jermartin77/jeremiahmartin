@@ -50,7 +50,7 @@
     margin-left: size($gutter-mobile * -1);
     margin-right: size($gutter-mobile * -1);
 
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-sm) {
         overflow-y: hidden;
         overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
@@ -162,13 +162,10 @@
     border-radius: size-flexible(1.5);
     box-shadow: 0 0 size-flexible(4) rgba(0, 0, 0, .7);
     transition: opacity .3s ease-in;
-    max-height: 100%;
     margin-left: auto;
     margin-right: auto;
-    overflow: hidden;
 
     @media (min-width: $screen-sm) {
-        width: auto;
         max-width: 100%;
     }
 
