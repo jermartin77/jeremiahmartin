@@ -68,6 +68,7 @@
         .portfolio-grid-inner {
             padding-left: size($gutter-mobile);
             padding-right: size($gutter-mobile);
+            flex: 1;
 
             @media (min-width: $screen-sm) {
                 display: grid;
