@@ -114,6 +114,7 @@ strong {
 a {
     color: $color-primary-base;
     text-decoration: underline;
+    transition: color .3s ease-out;
 
     &:hover {
         color: $color-primary-400;
