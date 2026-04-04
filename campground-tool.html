@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outdoor Recreation Campground Site Finder</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f9f8f5; color: #1a1a18; padding: 24px 16px; }
+.wrap { max-width: 900px; margin: 0 auto; }
+h1 { font-size: 20px; font-weight: 500; margin-bottom: 4px; }
+.subtitle { font-size: 13px; color: #6b6b68; margin-bottom: 24px; }
+.tab-row { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.tab { padding: 6px 16px; border-radius: 8px; border: 0.5px solid #c0bfb8; background: transparent; color: #6b6b68; cursor: pointer; font-size: 13px; font-family: inherit; }
+.tab.active { background: #eeecea; color: #1a1a18; border-color: #888780; font-weight: 500; }
+.section { display: none; }
+.section.active { display: block; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+.card { background: #fff; border: 0.5px solid #d3d1c7; border-radius: 12px; padding: 1rem 1.25rem; }
+.card-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 10px; gap: 8px; }
+.loc-name { font-size: 15px; font-weight: 500; color: #1a1a18; }
+.badge { font-size: 11px; padding: 3px 8px; border-radius: 8px; font-weight: 500; white-space: nowrap; }
+.badge-green { background: #EAF3DE; color: #3B6D11; }
+.badge-amber { background: #FAEEDA; color: #854F0B; }
+.badge-blue { background: #E6F1FB; color: #185FA5; }
+.badge-coral { background: #FAECE7; color: #993C1D; }
+.score-row { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+.score-pill { font-size: 12px; color: #6b6b68; display: flex; align-items: center; gap: 4px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: #5DCAA5; }
+.bar-row { margin: 6px 0; }
+.bar-label { display: flex; justify-content: space-between; font-size: 12px; color: #6b6b68; margin-bottom: 3px; }
+.bar-track { background: #eeecea; height: 6px; border-radius: 3px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 3px; }
+.card-footer { margin-top: 10px; padding-top: 10px; border-top: 0.5px solid #d3d1c7; font-size: 12px; color: #6b6b68; line-height: 1.5; }
+.metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.5rem; }
+.metric { background: #eeecea; border-radius: 8px; padding: 12px 14px; }
+.metric-label { font-size: 12px; color: #6b6b68; margin-bottom: 4px; }
+.metric-val { font-size: 20px; font-weight: 500; color: #1a1a18; }
+.metric-sub { font-size: 11px; color: #6b6b68; margin-top: 2px; }
+.section-title { font-size: 12px; font-weight: 500; color: #6b6b68; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+.tool-compare { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 1.5rem; }
+.tool-compare th { text-align: left; padding: 8px 10px; border-bottom: 0.5px solid #c0bfb8; color: #6b6b68; font-weight: 500; font-size: 12px; }
+.tool-compare td { padding: 8px 10px; border-bottom: 0.5px solid #d3d1c7; color: #1a1a18; vertical-align: top; }
+.tool-compare tr:last-child td { border-bottom: none; }
+.check { color: #3B6D11; }
+.cross { color: #A32D2D; }
+.method-step { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+.step-num { min-width: 28px; height: 28px; border-radius: 50%; background: #eeecea; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; color: #6b6b68; flex-shrink: 0; }
+.step-text { font-size: 14px; color: #1a1a18; line-height: 1.6; }
+.step-sub { font-size: 12px; color: #6b6b68; margin-top: 2px; }
+.filter-row { display: flex; gap: 8px; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+.filter-label { font-size: 12px; color: #6b6b68; }
+select { padding: 5px 10px; border-radius: 8px; border: 0.5px solid #c0bfb8; background: #fff; color: #1a1a18; font-size: 13px; font-family: inherit; }
+.overall { font-size: 22px; font-weight: 500; color: #1a1a18; }
+.chart-wrap { position: relative; height: 240px; margin-bottom: 1.5rem; }
+.note-text { font-size: 13px; color: #6b6b68; line-height: 1.6; margin-bottom: 1rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Outdoor Recreation Campground Site Finder</h1>
+  <p class="subtitle">Scoring US + Spain locations across trail density, land value, demand gap, and year-round viability</p>
+
+  <div class="tab-row">
+    <button class="tab active" onclick="showTab('locations', this)">Top locations</button>
+    <button class="tab" onclick="showTab('tools', this)">Tool guide</button>
+    <button class="tab" onclick="showTab('method', this)">How to research</button>
+    <button class="tab" onclick="showTab('market', this)">Market data</button>
+  </div>
+
+  <!-- LOCATIONS -->
+  <div id="locations" class="section active">
+    <div class="metric-row">
+      <div class="metric"><div class="metric-label">Locations scored</div><div class="metric-val">10</div><div class="metric-sub">US + Spain</div></div>
+      <div class="metric"><div class="metric-label">Land price range</div><div class="metric-val">$3k–$30k</div><div class="metric-sub">per acre (US rural)</div></div>
+      <div class="metric"><div class="metric-label">Campground demand gap</div><div class="metric-val">High</div><div class="metric-sub">56% struggle to book in 2024</div></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Filter by:</span>
+      <select onchange="filterCards(this.value)">
+        <option value="all">All locations</option>
+        <option value="us">United States</option>
+        <option value="es">Spain</option>
+        <option value="value">Best land value</option>
+        <option value="trail">Highest trail density</option>
+      </select>
+    </div>
+    <div class="grid2" id="card-grid"></div>
+  </div>
+
+  <!-- TOOLS -->
+  <div id="tools" class="section">
+    <p class="section-title">Platform comparison</p>
+    <table class="tool-compare">
+      <thead><tr><th>Tool</th><th>Best for</th><th>MTB heatmap</th><th>Trail running</th><th>Gravel</th><th>Free tier</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Strava global heatmap</strong></td><td>Aggregate activity density, 12-month rolling, all sports</td><td><span class="check">✓</span> (MTB filter)</td><td><span class="check">✓</span></td><td><span class="check">✓</span> (gravel filter added 2024)</td><td><span class="check">✓</span></td></tr>
+        <tr><td><strong>Trailforks</strong></td><td>MTB trail database, ridelog activity heatmap by popularity (9-month window), trail quality scores</td><td><span class="check">✓</span> best-in-class</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span> (Pro sub for heatmap)</td></tr>
+        <tr><td><strong>AllTrails</strong></td><td>Hiker/runner popularity, reviews, crowdsourced conditions</td><td>Limited</td><td><span class="check">✓</span></td><td>Minimal</td><td><span class="check">✓</span></td></tr>
+        <tr><td><strong>Komoot</strong></td><td>Route planning, surface-type data, gravel/bikepacking strong in Europe</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span> especially Europe</td><td>Partial</td></tr>
+        <tr><td><strong>Strava Metro</strong></td><td>Aggregated de-identified data for planning — best for quantitative analysis</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="cross">✗</span> (gov/org pricing)</td></tr>
+        <tr><td><strong>Bikepacking.com</strong></td><td>Gravel + adventure routes; esp. useful for Spain (Pyrenees, TransAndalus)</td><td>Limited</td><td>Limited</td><td><span class="check">✓</span> excellent</td><td><span class="check">✓</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note-text">Key limitation: Strava heatmaps show density of <em>users</em>, not trail quality. Wealthier areas are overrepresented. Cross-reference with Trailforks ridelog data for ground truth. In Spain, Komoot + Bikepacking.com fill gaps where Strava data is sparser in rural regions.</p>
+  </div>
+
+  <!-- METHOD -->
+  <div id="method" class="section">
+    <p class="section-title">Research workflow</p>
+    <div class="method-step"><div class="step-num">1</div><div><div class="step-text">Identify heat clusters on Strava (bike + trail run filters)</div><div class="step-sub">Look for bright convergence zones outside major metro areas. These are athlete magnets with existing infrastructure.</div></div></div>
+    <div class="method-step"><div class="step-num">2</div><div><div class="step-text">Validate trail quality on Trailforks</div><div class="step-sub">Check ridelog counts per trail, star ratings, trail status (open/closed), and whether the network is expanding. Avoid stagnant networks.</div></div></div>
+    <div class="method-step"><div class="step-num">3</div><div><div class="step-text">Check AllTrails for trail running + hiker volume</div><div class="step-sub">High review counts + difficulty distribution (moderate to hard) signal the right demographic. Look for towns with 500+ reviews per major trail.</div></div></div>
+    <div class="method-step"><div class="step-num">4</div><div><div class="step-text">Map events: races, gran fondos, enduro series</div><div class="step-sub">Recurring events (XTERRA, EWS, NUE, Dirty Kanza-style gravel) create reliable shoulder-season demand. Check mtbracenews.com, USA Cycling calendar.</div></div></div>
+    <div class="method-step"><div class="step-num">5</div><div><div class="step-text">Pull land prices via LandWatch / Lands of America / Idealista (Spain)</div><div class="step-sub">Target: within 10 miles of trail head, 20–100 acres, rural zoning. Sweet spot is where land is still &lt;$10k/acre US or &lt;€15k/ha Spain but trail activity is already dense.</div></div></div>
+    <div class="method-step"><div class="step-num">6</div><div><div class="step-text">Score on 4 axes: trail density, land cost, competitor gap, year-round viability</div><div class="step-sub">Avoid: known resort towns (Moab, Sedona) — land is priced in. Target: the next Bentonville or next Ainsa.</div></div></div>
+    <div class="method-step"><div class="step-num">7</div><div><div class="step-text">Check campground supply vs demand</div><div class="step-sub">Use The Dyrt, Hipcamp, and Recreation.gov — search the area and see how quickly sites book out. Fully booked weekends = demand signal.</div></div></div>
+  </div>
+
+  <!-- MARKET -->
+  <div id="market" class="section">
+    <div class="metric-row">
+      <div class="metric"><div class="metric-label">US RV parks (total)</div><div class="metric-val">~16k</div><div class="metric-sub">supply-constrained nationally</div></div>
+      <div class="metric"><div class="metric-label">Avg US occupancy</div><div class="metric-val">60–70%</div><div class="metric-sub">spikes to ~100% peak season</div></div>
+      <div class="metric"><div class="metric-label">Spain avg land price</div><div class="metric-val">€10.2k/ha</div><div class="metric-sub">rural; +2.8% in 2024</div></div>
+    </div>
+    <p class="section-title">Land price context (USD thousands/acre equiv.)</p>
+    <div class="chart-wrap">
+      <canvas id="priceChart"></canvas>
+    </div>
+    <p class="note-text">Resort towns (Moab, Sedona, Park City) command premiums of 3–10× adjacent rural land because they're already "discovered." The opportunity is the 5–10 mile radius outside established trail towns where land hasn't yet re-priced but demand is growing.</p>
+    <p class="section-title" style="margin-top:1rem;">Spain opportunity context</p>
+    <p class="note-text">Spain's rural interior ("España vacía") is actively incentivizing tourism development to combat depopulation. Regions like Aragón, Castilla-La Mancha, and Extremadura offer land from €5–15k/ha near world-class MTB and trail running terrain. The Pyrenees (Ainsa, Benasque) and Sierra Nevada (La Alpujarra) regions are seeing growing international athlete tourism with under-supplied quality accommodation.</p>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const locations = [
+  { name:"Bentonville, AR", region:"us", country:"United States", badge:"Best overall US", badgeClass:"badge-green", trail:95, landValue:75, demand:90, yearRound:70, overall:9.2, landPrice:"$5k–$12k/acre nearby", sports:["MTB (Oz Trails)","Trail running","Gravel"], note:"Fastest growing MTB destination in the US. Trailforks activity exploding. Demand far exceeds campground supply. Land still reasonable 10–20 miles out from Coler trailhead.", tags:["us","trail","value"] },
+  { name:"Brevard, NC", region:"us", country:"United States", badge:"Trail runner's town", badgeClass:"badge-blue", trail:88, landValue:65, demand:82, yearRound:75, overall:8.6, landPrice:"$8k–$18k/acre", sports:["Trail running","MTB (DuPont, Pisgah)","Gravel"], note:"Gateway to Pisgah National Forest. AllTrails density very high. Pisgah 55K and other ultras drive event-based demand. Western NC land still accessible.", tags:["us","trail"] },
+  { name:"Durango, CO", region:"us", country:"United States", badge:"MTB mecca", badgeClass:"badge-amber", trail:97, landValue:40, demand:88, yearRound:65, overall:8.0, landPrice:"$15k–$35k/acre rural", sports:["MTB","Gravel","Trail running"], note:"World-class Strava heatmap density. La Plata County land getting pricey. Best opportunity is 15–25 miles out toward Bayfield or Hesperus — trail access still strong, prices lower.", tags:["us","trail"] },
+  { name:"Bellingham, WA", region:"us", country:"United States", badge:"Emerging hotspot", badgeClass:"badge-blue", trail:90, landValue:50, demand:80, yearRound:60, overall:8.1, landPrice:"$10k–$25k/acre Whatcom Co.", sports:["MTB (Galbraith)","Trail running","Gravel"], note:"Galbraith Mountain has one of the highest Trailforks ridelog concentrations in the PNW. Blue Ribbon Trail opened 2024. Rain limits winter window.", tags:["us","trail"] },
+  { name:"Salida, CO", region:"us", country:"United States", badge:"Value pick", badgeClass:"badge-green", trail:82, landValue:60, demand:75, yearRound:70, overall:7.9, landPrice:"$8k–$20k/acre Chaffee Co.", sports:["MTB","Gravel","Trail running"], note:"Smaller than Durango but more land value. 300+ days of sunshine. Monarch Crest Trail, Absolute Bikes trail system. Gravel scene exploding (Crusher in the Tushar nearby).", tags:["us","value"] },
+  { name:"Ainsa, Aragón, Spain", region:"es", country:"Spain", badge:"Best Spain pick", badgeClass:"badge-green", trail:85, landValue:90, demand:70, yearRound:72, overall:8.7, landPrice:"€6k–€14k/ha rural", sports:["MTB","Trail running (Buff Epic)","Gravel"], note:"Hub of Pyrenean MTB. Hosts Enduro World Series events. Bikepacking.com routes converge here. Rural land extremely affordable vs trail access quality. 'España vacía' grants available for rural tourism projects.", tags:["es","value","trail"] },
+  { name:"La Alpujarra, Granada, Spain", region:"es", country:"Spain", badge:"Year-round climate", badgeClass:"badge-coral", trail:80, landValue:88, demand:65, yearRound:90, overall:8.3, landPrice:"€5k–€12k/ha", sports:["Trail running","MTB","Gravel (Sierra Nevada)"], note:"South-facing, mild winters, 300 days sun. Sierra Nevada park borders. TransNevada gravel route, Sierra Nevada MTB Bike Park. Growing international athlete tourism. Very affordable finca land.", tags:["es","value"] },
+  { name:"Picos de Europa, Asturias", region:"es", country:"Spain", badge:"Hidden gem", badgeClass:"badge-amber", trail:78, landValue:85, demand:55, yearRound:55, overall:7.5, landPrice:"€4k–€10k/ha", sports:["Trail running (UTMB qualifier)","MTB","Hiking"], note:"Dramatic limestone peaks, Picos de Europa National Park. MIUT and other UTMB qualifier races. Less developed than Pyrenees, more upside. Wet climate limits season but draws serious mountain athletes.", tags:["es","value"] },
+  { name:"Moab, UT", region:"us", country:"United States", badge:"Oversaturated", badgeClass:"badge-coral", trail:99, landValue:20, demand:95, yearRound:60, overall:7.0, landPrice:"$40k–$100k+/acre", sports:["MTB","Trail running","Gravel"], note:"Trail density is maximal but land is priced far beyond value. Grand County zoning is restrictive. Skip as campground investment — arrive as a customer.", tags:["us"] },
+  { name:"Tremp / Pallars, Catalonia", region:"es", country:"Spain", badge:"Undervalued", badgeClass:"badge-green", trail:75, landValue:92, demand:58, yearRound:75, overall:7.8, landPrice:"€4k–€9k/ha (Lleida)", sports:["MTB","Gravel","Trail running"], note:"Pre-Pyrenees area with warm climate, limestone terrain, huge undeveloped gravel network. Lleida province has lowest farmland prices in Catalonia. Under-the-radar but growing fast on Komoot and Strava.", tags:["es","value"] }
+];
+
+const bars = [
+  {label:'Trail density (Strava/TF/AT)', key:'trail', color:'#185FA5'},
+  {label:'Land value score', key:'landValue', color:'#3B6D11'},
+  {label:'Demand vs supply gap', key:'demand', color:'#854F0B'},
+  {label:'Year-round viability', key:'yearRound', color:'#534AB7'},
+];
+
+function renderCards(filter) {
+  const grid = document.getElementById('card-grid');
+  grid.innerHTML = '';
+  const filtered = filter === 'all' ? locations :
+    filter === 'us' ? locations.filter(l => l.region === 'us') :
+    filter === 'es' ? locations.filter(l => l.region === 'es') :
+    filter === 'value' ? locations.filter(l => l.landValue >= 75) :
+    locations.filter(l => l.trail >= 85);
+
+  filtered.forEach(loc => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="card-header">
+        <div>
+          <div class="loc-name">${loc.name}</div>
+          <div style="font-size:12px;color:#6b6b68;margin-top:2px;">${loc.country} · ${loc.landPrice}</div>
+        </div>
+        <span class="badge ${loc.badgeClass}">${loc.badge}</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:10px;">
+        <span class="overall">${loc.overall}</span>
+        <span style="font-size:12px;color:#6b6b68;">/ 10 overall</span>
+      </div>
+      ${bars.map(b => `
+        <div class="bar-row">
+          <div class="bar-label"><span>${b.label}</span><span>${loc[b.key]}</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:${loc[b.key]}%;background:${b.color};"></div></div>
+        </div>
+      `).join('')}
+      <div class="score-row" style="margin-top:8px;">
+        ${loc.sports.map(s => `<span class="score-pill"><span class="dot"></span>${s}</span>`).join('')}
+      </div>
+      <div class="card-footer">${loc.note}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function filterCards(val) { renderCards(val); }
+
+function showTab(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+renderCards('all');
+
+new Chart(document.getElementById('priceChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Shannon, MO', 'Salida, CO', 'Brevard, NC', 'Durango, CO', 'Bellingham, WA', 'Moab, UT', 'Lleida, Spain', 'Granada, Spain', 'Aragón, Spain'],
+    datasets: [{
+      label: 'Land price (USD thousands/acre equiv.)',
+      data: [16, 14, 13, 22, 18, 65, 10, 11, 12],
+      backgroundColor: ['#378ADD','#378ADD','#378ADD','#378ADD','#378ADD','#E24B4A','#1D9E75','#1D9E75','#1D9E75'],
+      borderRadius: 4,
+      borderSkipped: false,
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => `~$${ctx.raw}k/acre equiv.` } }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { callback: v => '$' + v + 'k', font: { size: 11 } },
+        grid: { color: 'rgba(0,0,0,0.06)' }
+      },
+      x: {
+        ticks: { font: { size: 10 }, maxRotation: 35 },
+        grid: { display: false }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
