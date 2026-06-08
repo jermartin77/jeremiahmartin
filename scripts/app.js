@@ -95,6 +95,7 @@ introTimeline.to('#slideshow-overlay', {
       activeModal = document.getElementById(modalId);
       activeModal.classList.add('active');
       $body.classList.add('locked');
+      lazySizes.loader.checkElems();
       setTimeout(function(){
         activeModal.classList.add('show');
       }, 50);

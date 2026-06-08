@@ -4,7 +4,7 @@
   "description": "The personal website of Jeremiah Martin",
   "main": "index.js",
   "scripts": {
-    "compile-css": "node-sass --include-path scss scss/styles.scss   styles/styles.css --output-style compressed",
+    "compile-css": "sass --load-path scss scss/styles.scss styles/styles.css --style compressed",
     "watch-css": "nodemon -e scss -x \"npm run compile-css\"",
     "dev": "npm run watch-css & live-server"
   },
@@ -27,8 +27,8 @@
   "homepage": "https://github.com/jermartin77/jeremiahmartin#readme",
   "devDependencies": {
     "live-server": "^1.2.1",
-    "node-sass": "^6.0.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "sass": "^1.100.0"
   },
   "dependencies": {
     "gsap": "^3.7.1"
